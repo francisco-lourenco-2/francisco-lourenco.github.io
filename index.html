@@ -3,10 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Francisco Lourenço | Machine Learning Engineer</title>
+  <title>Francisco Lourenço | Portfolio</title>
   <style>
+    @font-face {
+      font-family: 'Ubuntu-Bold';
+      src: url('fonts/Ubuntu-Bold.ttf') format('ttf');
+      font-weight: 700;
+    }
+
+    @font-face {
+      font-family: 'Ubuntu-BoldItalic';
+      src: url('fonts/Ubuntu-BoldItalic.ttf') format('ttf');
+      font-weight: 700;
+    }
+
+    @font-face {
+      font-family: 'Ubuntu-Medium';
+      src: url('fonts/Ubuntu-Medium.ttf') format('ttf');
+      font-weight: 600;
+    }
+
+    @font-face {
+      font-family: 'Ubuntu-MediumItalic';
+      src: url('fonts/Ubuntu-MediumItalic.ttf') format('ttf');
+      font-weight: 600;
+    }
+
+    @font-face {
+      font-family: 'Ubuntu-Italic';
+      src: url('fonts/Ubuntu-Italic.ttf') format('ttf');
+      font-weight: 400;
+    }
+
+    @font-face {
+      font-family: 'Ubuntu-Regular';
+      src: url('fonts/Ubuntu-Regular.ttf') format('ttf');
+      font-weight: 400;
+    }
+
+    @font-face {
+      font-family: 'Ubuntu-Light';
+      src: url('fonts/Ubuntu-Light.ttf') format('ttf');
+      font-weight: 200;
+    }
+
+    @font-face {
+      font-family: 'Ubuntu-LightItalic';
+      src: url('fonts/Ubuntu-LightItalic.ttf') format('ttf');
+      font-weight: 200;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Ubuntu';
       line-height: 1.6;
       margin: 0;
       padding: 0;
@@ -14,8 +62,15 @@
       color: #333;
     }
     header {
-      background: #222;
-      color: #fff;
+      font-family: 'Ubuntu';
+
+      /* background: #222; */
+      background-image: url('backgorund.png'); /* or use an external URL */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      color: #dadada;
       padding: 2rem 1rem;
       text-align: center;
     }
@@ -50,18 +105,30 @@
     a {
       color: #007acc;
     }
+
+    .profile-pic {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%; /* Makes it a circle */
+      margin-bottom: 1rem;
+      border: 3px solid white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Francisco Lourenço</h1>
-    <p>Machine Learning Engineer/ Computer Vision Engineer / 3D Data Specialist</p>
-    <p><a href="mailto:francisco.rlourenco@gmail.com">francisco.rlourenco@gmail.com</a> | Coimbra, Portugal</p>
-    <p>
-      <a href="https://linkedin.com/in/franciscorlourenco" target="_blank">LinkedIn</a> |
-      <a href="https://github.com/francisco-lourenco-2" target="_blank">GitHub</a> |
-      <a href="https://orcid.org/0000-0001-7081-5641" target="_blank">ORCID</a>
-    </p>
+    <div class="overlay"></div>
+    <img src="me_but_green.png" alt="Francisco Lourenço" class="profile-pic">
+      <h1>Francisco Lourenço</h1>
+      <p>Machine Learning Engineer | Computer Vision Engineer | 3D Data Specialist</p>
+      <p><a href="mailto:francisco.rlourenco@gmail.com">francisco.rlourenco@gmail.com</a> | Coimbra, Portugal</p>
+      <p>
+        <a href="https://linkedin.com/in/franciscorlourenco" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/francisco-lourenco-2" target="_blank">GitHub</a> |
+        <a href="https://orcid.org/0000-0001-7081-5641" target="_blank">ORCID</a>
+      </p>
   </header>
 
   <nav>
