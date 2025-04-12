@@ -65,14 +65,14 @@
       font-family: 'Ubuntu';
 
       /* background: #222; */
-      background-image: url('backgorund.png'); /* or use an external URL */
+      background-image: url('background_1.png'); /* or use an external URL */
       background-size: cover;
-      background-position: center;
+      background-position: left;
       background-repeat: no-repeat;
 
-      color: #dadada;
+      color: #252525;
       padding: 2rem 1rem;
-      text-align: center;
+      /* text-align: center; */
     }
     nav {
       background: #444;
@@ -106,19 +106,76 @@
       color: #007acc;
     }
 
+    /* .overlay {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    } */
+
+    .overlay {
+      padding: 2rem;
+      display: flex;
+      gap: 3rem; /* Try increasing to 4rem or more */
+      margin: auto;
+      align-items: center;
+      justify-content: center;
+      max-width: 1500px;
+    }
+
+    .header-left {
+      flex-shrink: 0;
+    }
+
     .profile-pic {
-      width: 300px;
-      height: 300px;
+      width: 500px;
+      height: 500px;
       object-fit: cover;
-      border-radius: 50%; /* Makes it a circle */
-      margin-bottom: 1rem;
+      border-radius: 50%;
       border: 3px solid white;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .header-right {
+      text-align: left;
+      flex: 1; /* Let it grow */
+      min-width: 0;
+
+      /* background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      max-width: 600px;
+      max-width: 700px; wider */
+
+    }
+    
+    .header-right h1 {
+      font-size: 4.0rem; /* Bigger name */
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+
+    }
+
+    .header-right p {
+      font-size: 2.3rem; /* Slightly larger for paragraphs */
+      margin: 0.25rem 0;
+    }
+
+    .header-right p em {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #333; /* optional tweak */
     }
   </style>
 </head>
 <body>
-  <header>
+  <!-- <header>
     <div class="overlay"></div>
     <img src="me_but_green.png" alt="Francisco Lourenço" class="profile-pic">
       <h1>Francisco Lourenço</h1>
@@ -129,6 +186,30 @@
         <a href="https://github.com/francisco-lourenco-2" target="_blank">GitHub</a> |
         <a href="https://orcid.org/0000-0001-7081-5641" target="_blank">ORCID</a>
       </p>
+  </header> -->
+
+  <header>
+    <div class="overlay">
+      <div class="header-left">
+        <img src="me_no_bkg.png" alt="Francisco Lourenço" class="profile-pic">
+      </div>
+      <div class="header-right">
+        <h1>Francisco Lourenço</h1>
+        <!-- <p>Machine Learning 🤖 & Computer Vision Engineer 👁️</p>
+        <p>3D Data Specialist 🧊</p> -->
+        <p>🤖 ML • 👁️ CV • 📐 3D Data Specialist</p>
+        <br>
+        <p><em>”A real team‐player, who has the
+          ability to work unsupervised and
+          drive strategic projects.”</em></p>
+        <!-- <p><a href="mailto:francisco.rlourenco@gmail.com">francisco.rlourenco@gmail.com</a> | Coimbra, Portugal</p>
+        <p>
+          <a href="https://linkedin.com/in/franciscorlourenco" target="_blank">LinkedIn</a> |
+          <a href="https://github.com/francisco-lourenco-2" target="_blank">GitHub</a> |
+          <a href="https://orcid.org/0000-0001-7081-5641" target="_blank">ORCID</a>
+        </p> -->
+      </div>
+    </div>
   </header>
 
   <nav>
