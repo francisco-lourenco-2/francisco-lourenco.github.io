@@ -65,7 +65,7 @@
       font-family: 'Ubuntu';
 
       /* background: #222; */
-      background-image: url('background_1.png'); /* or use an external URL */
+      background-image: url('img/background_1.png'); /* or use an external URL */
       background-size: cover;
       background-position: left;
       background-repeat: no-repeat;
@@ -137,6 +137,7 @@
       border-radius: 50%;
       border: 3px solid white;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      background: rgba(255, 255, 255, 0.2);
     }
 
     .header-right {
@@ -163,7 +164,7 @@
     }
 
     .header-right p {
-      font-size: 2.3rem; /* Slightly larger for paragraphs */
+      font-size: 1.8rem; /* Slightly larger for paragraphs */
       margin: 0.25rem 0;
     }
 
@@ -171,6 +172,48 @@
       font-size: 1.3rem;
       font-style: italic;
       color: #333; /* optional tweak */
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+
+    .project-card {
+      display: block;
+      text-decoration: none;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-image {
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #007acc;
+    }
+
+    .card-content p {
+      margin: 0.3rem 0 0;
+      color: #555;
     }
   </style>
 </head>
@@ -191,13 +234,14 @@
   <header>
     <div class="overlay">
       <div class="header-left">
-        <img src="me_no_bkg.png" alt="Francisco Lourenço" class="profile-pic">
+        <img src="img/me_no_bkg.png" alt="Francisco Lourenço" class="profile-pic">
       </div>
       <div class="header-right">
         <h1>Francisco Lourenço</h1>
         <!-- <p>Machine Learning 🤖 & Computer Vision Engineer 👁️</p>
         <p>3D Data Specialist 🧊</p> -->
-        <p>🤖 ML • 👁️ CV • 📐 3D Data Specialist</p>
+        <!-- <p>🤖 ML • 👁️ CV • 📐 3D Data Specialist</p> -->
+        <p>🤖 Machine Learning • 👁️ Computer Vision • 🔲 3D Data Specialist</p>
         <br>
         <p><em>”A real team‐player, who has the
           ability to work unsupervised and
@@ -222,13 +266,30 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I am a passionate and flexible Machine Learning / Computer Vision Engineer with nearly 4 years of experience building ML solutions in production. My work ranges from 3D shape classification and segmentation to real-time 3D scanning systems. I thrive in innovative and technical environments where I can apply my skills in machine learning, robotics, and automation.</p>
-  </section>
+    <p>
+      
+      I’m Francisco Lourenço, a Machine Learning and Computer Vision Engineer with a strong focus on 3D data. What drives me is the opportunity to replicate — and in some ways, expand on — one of the most fundamental aspects of human experience: visual perception. The ability to translate our understanding of the world into intelligent systems is not only fascinating from a technical standpoint, but also incredibly meaningful in terms of impact.
+      <br><br>
+      Machine Learning and Computer Vision sit at the core of the technological transformation we’re witnessing today. These fields are not only enabling machines to interpret and interact with the world visually — they’re reshaping industries, streamlining operations, and opening entirely new possibilities for human-computer interaction. When extended into 3D data, the potential becomes even more profound. We don’t live in a 2D world, and systems that can reason about depth, shape, and spatial relationships offer a foundation for breakthroughs in automation, robotics, design, and beyond. For engineers like myself, working in this space means constantly solving high-impact problems at the intersection of perception, intelligence, and innovation.
+      <br><br>
+      I’ve been experimenting with machines, computers, and robotics from a young age, influenced by my father, who’s also an electrical engineer. At one point during my teenage years, I built a simple robot that used a camera and motors to follow an object around, as a playful attempt at automating how golfers carry their equipment. It wasn’t a revolutionary project, but it reflected the same mindset I bring to my work today: blending creativity, technical knowledge, and a hands-on approach to building systems that do something meaningful. Whether it's designing a custom 3D scanner with minimal hardware or solving real-world vision problems, that instinct to create and experiment has been a constant throughout my life.
+      <br><br>
+      I’m particularly drawn to working on end-to-end systems — from initial research and prototyping to development, fine-tuning, and deployment. I enjoy full ownership over what I build, not because I shy away from teamwork (on the contrary — I value knowledge-sharing and technical discussions), but because I thrive when I have the space and responsibility to dive deep into a problem and solve it thoroughly. That’s where I deliver my best work.
+      <br><br>
+      Throughout my career, I’ve been trusted to lead and deliver technically challenging solutions, especially in fast-paced startup environments. One example is the 3D scanner I built for coatingAI, where I developed a scanning system using just a single RGB-D camera and strategically placed QR code markers to enable accurate camera localization and point cloud fusion — all designed and prototyped remotely during the early months of my first job.
+      <br><br>
+      Colleagues and managers have consistently described me as highly independent, creative, and committed. I take pride in building systems that work — not just theoretically, but in production, solving real problems for real users.
+      <br><br>
+      I'm currently open to remote opportunities, whether freelance or full-time, and I’m especially drawn to startups or small, agile teams where I can have meaningful impact and wear multiple hats. I bring a balance of deep technical expertise, a drive to keep learning, and a strong sense of responsibility for everything I work on.
+      <br><br>
+      If you're looking for someone who combines technical excellence with ownership, creativity, and a real passion for building intelligent systems — I’d be happy to connect.
+    </p>
+    </section>
 
-  <section id="projects">
+  <!-- <section id="projects">
     <h2>Highlighted Projects</h2>
     <div class="project">
-      <h3>Animate Anything: 3D Shape Classification & Segmentation</h3>
+      <h3>Animate Anything: 3D Shape Classification, Alignment, & Segmentation</h3>
       <p><strong>Company:</strong> Anything World</p>
       <p>Developed and deployed ML models for 3D shape classification, alignment, and part segmentation, used in the Animate Anything tool: <a href="https://app.anything.world" target="_blank">app.anything.world</a>.</p>
     </div>
@@ -241,6 +302,112 @@
       <h3>6DoF Object Pose Estimation</h3>
       <p><strong>Thesis:</strong> University of Coimbra</p>
       <p>Developed a deep learning approach for 6DoF pose estimation from RGB-D images. Scored 19/20 on final thesis defense.</p>
+    </div>
+  </section> -->
+
+  <section id="projects">
+    <h2>Highlighted Projects</h2>
+    <div class="projects-grid">
+  
+      <a href="projects/3d-shape-classification.html" class="project-card">
+        <div class="card-image" style="background-image: url('img/classification.png');"></div>
+        <div class="card-content">
+          <h3>3D Shape Classification System</h3>
+          <p>Anything World</p>
+        </div>
+      </a>
+  
+      <a href="projects/3d-shape-alignment.html" class="project-card">
+        <div class="card-image" style="background-image: url('img/alignment.png');"></div>
+        <div class="card-content">
+          <h3>3D Shape Automatic Alignment</h3>
+          <p>Anything World</p>
+        </div>
+      </a>
+  
+      <a href="projects/3d-shape-segmentation.html" class="project-card">
+        <div class="card-image" style="background-image: url('img/segmentation.png');"></div>
+        <div class="card-content">
+          <h3>3D Shape Part Segmentation System</h3>
+          <p>Anything World</p>
+        </div>
+      </a>
+  
+      <a href="projects/3d-scanner.html" class="project-card">
+        <div class="card-image" style="background-image: url('img/scanner.png');"></div>
+        <div class="card-content">
+          <h3>Custom Multi RGB-D camera system based 3D scanner</h3>
+          <p>coatingAI</p>
+        </div>
+      </a>
+  
+      <a href="projects/glass_bottle.html" class="project-card">
+        <div class="card-image" style="background-image: url('img/glass_bottle.png');"></div>
+        <div class="card-content">
+          <h3>Anomaly Detection System for a Glass Bottle Production Line</h3>
+          <p>Vidrotec</p>
+        </div>
+      </a>
+
+      <a href="projects/masters-thesis.html" class="project-card">
+        <div class="card-image" style="background-image: url('img/thesis.png');"></div>
+        <div class="card-content">
+          <h3>6DoF Object Pose Estimation from RGB-D Images
+            Using Machine Learning Approaches</h3>
+          <p>Master Thesis</p>
+        </div>
+      </a>
+  
+      <a href="projects/paper-depth-estimation.html" class="project-card">
+        <div class="card-image" style="background-image: url('img/depth.png');"></div>
+        <div class="card-content">
+          <h3>Intel RealSense SR305, D415 and L515:
+            Experimental Evaluation and Comparison of
+            Depth Estimation</h3>
+          <p>VISIGRAPP 2021 International Conference</p>
+        </div>
+      </a>
+  
+      <a href="projects/paper-pose-estimation.html" class="project-card">
+        <div class="card-image" style="background-image: url('img/pose.png');"></div>
+        <div class="card-content">
+          <h3>Evaluation of the Accuracy of Pose Estimation Based on Relative Pose</h3>
+          <p>RECPAD 2021 Portuguese Conference</p>
+        </div>
+      </a>
+  
+      <!-- <a href="projects/robotics-festival.html" class="project-card">
+        <div class="card-image" style="background-image: url('img/robotics.jpg');"></div>
+        <div class="card-content">
+          <h3>Robotics Festival 2014</h3>
+          <p>National robotics competition – Portugal</p>
+        </div>
+      </a>
+  
+      <a href="projects/f1-in-schools-2013.html" class="project-card">
+        <div class="card-image" style="background-image: url('img/f1-2013.jpg');"></div>
+        <div class="card-content">
+          <h3>F1 in Schools – 2013</h3>
+          <p>Team competition – STEM & racing design</p>
+        </div>
+      </a>
+  
+      <a href="projects/f1-in-schools-2012.html" class="project-card">
+        <div class="card-image" style="background-image: url('img/f1-2012.jpg');"></div>
+        <div class="card-content">
+          <h3>F1 in Schools – 2012</h3>
+          <p>First participation in engineering competition</p>
+        </div>
+      </a>
+  
+      <a href="projects/object-following-robot.html" class="project-card">
+        <div class="card-image" style="background-image: url('img/robot.jpg');"></div>
+        <div class="card-content">
+          <h3>Vision-Guided Robot</h3>
+          <p>Early personal project for object tracking and mobility</p>
+        </div>
+      </a> -->
+  
     </div>
   </section>
 
