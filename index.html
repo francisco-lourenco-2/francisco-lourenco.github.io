@@ -60,36 +60,196 @@
       padding: 0;
       background-color: #f9f9f9;
       color: #333;
+      background-image: url('img/background_3.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      position: relative;
+      /* opacity: 0.05; Controls transparency: lower = more transparent */
     }
+
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: url('img/background_2.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+      pointer-events: none;
+    }
+
     header {
       font-family: 'Ubuntu';
 
-      /* background: #222; */
-      background-image: url('img/background_1.png'); /* or use an external URL */
+      background-image: url('img/background_3.png');
       background-size: cover;
       background-position: left;
       background-repeat: no-repeat;
 
       color: #252525;
       padding: 2rem 1rem;
-      /* text-align: center; */
     }
-    nav {
-      background: #444;
-      padding: 1rem;
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.75rem 2rem;
+      background: linear-gradient(90deg, #f9f7d9, #d8f8e1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #ccc;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-key {
+      background: #ffffffc9;
+      border: 2px solid #ccc;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+      color: #333;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+      transition: all 0.2s ease;
+    }
+
+    .nav-key:hover {
+      background-color: #fefefe;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .about-large-card {
+      position: relative;
+      height: 300px;
+      border-radius: 20px;
+      background-image: url('img/about_me.png');
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      overflow: hidden;
+    }
+
+    .about-large-card:hover {
+      transform: scale(1.025);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 2rem;
+      background: linear-gradient(to top, rgba(255,255,255,0.85), rgba(255,255,255,0.4));
+      backdrop-filter: blur(8px);
+      color: #1e2a33;
+      border-radius: 0 0 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .about-overlay h3 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .about-overlay p {
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .modal-content.animate-modal {
+      animation: scaleFadeIn 0.4s ease forwards;
+      border-radius: 12px;
+      position: relative;
+      padding: 2rem;
+      color: #222;
+    }
+
+    .close {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 1.5rem;
+      color: #333;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .about-photo-wrapper {
+      margin-top: 2rem;
       text-align: center;
     }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
+
+    .about-photo {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 16px; /* changed from 50% to 16px */
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+      object-fit: cover;
+      /* border: 2px solid rgba(255, 220, 255, 0.5); */
     }
+
+    .about-photo:hover {
+      transform: scale(1.05);
+    }
+
+    .about-photo-caption {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.5rem;
+      text-align: center;
+      font-style: italic;
+    }
+
+    @keyframes scaleFadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
     section {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
     }
+    /* h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+    } */
     h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+      color: #333;
       border-bottom: 2px solid #ccc;
       padding-bottom: 0.5rem;
     }
@@ -136,8 +296,8 @@
       object-fit: cover;
       border-radius: 50%;
       border: 3px solid white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      background: rgba(212, 255, 229, 0.3);
     }
 
     .header-right {
@@ -182,40 +342,444 @@
     }
 
     .project-card {
-      display: block;
-      text-decoration: none;
-      background: #fff;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+      color: white;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
       border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
       transition: transform 0.2s;
+      overflow: hidden;
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card-image {
-      height: 180px;
-      background-size: cover;
-      background-position: center;
+      transform: scale(1.03);
     }
 
     .card-content {
-      padding: 1rem;
+      width: 100%;
+      background: rgba(134, 134, 134, 0.3);
+      padding: 0.5rem 1rem;
+      text-align: left;
+      border-radius: 0 0 12px 12px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
     }
 
     .card-content h3 {
-      margin: 0;
+      margin: 0.4rem 0;
       font-size: 1.2rem;
-      color: #007acc;
+      line-height: 1.2;
+      color: rgb(255, 255, 255);
     }
 
     .card-content p {
       margin: 0.3rem 0 0;
-      color: #555;
+      font-size: 0.95rem;
+      color: #ffffff;
+    } 
+    
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
     }
+
+    .modal-content {
+      background-size: cover;
+      background-position: center;
+      margin: 5% auto;
+      padding: 2rem;
+      width: 90%;
+      max-width: 700px;
+      background-color: rgba(255,255,255,0.95);
+      border-radius: 10px;
+      color: #000;
+      backdrop-filter: blur(5px);
+      position: relative;
+    }
+    
+    .modal-content > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .modal-content::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.65); /* subtle white overlay */
+      backdrop-filter: blur(6px);
+      z-index: 0;
+      border-radius: 10px;
+    }
+
+    .modal-content h1 {
+      margin-top: 0;
+    }
+
+    /* .modal-content p {
+      margin: 0.3rem 0 0;
+      color: #555;
+    } */
+
+    .close {
+      color: #000;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .with-bg {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      color: #000;
+    }
+
+    .card-overlay {
+      backdrop-filter: blur(2px);
+      background-color: rgba(255, 255, 255, 0.65);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+    }
+
+    #experience, #education {
+      max-width: 1000px;
+      margin: auto;
+      padding: 4rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    #experience h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+      color: #333;
+    }
+
+    .timeline-artistic {
+      position: relative;
+      padding-left: 40px;
+      border-left: 0px solid rgb(25, 255, 4);
+    }
+
+    .timeline-artistic::before {
+      content: '';
+      position: absolute;
+      left: 38px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, #fff0, #c3f0df, #fef4c3, #fff0);
+      animation: shimmer 5s ease-in-out infinite;
+      z-index: 0;
+      filter: blur(1.5px);
+    }
+
+    @keyframes shimmer {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+
+    .timeline-entry {
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .timeline-marker {
+      width: 14px;
+      height: 14px;
+      background: radial-gradient(circle, #fff, #f9f7d9, #d8f8e1);
+      border: 2px solid #fff;
+      border-radius: 50%;
+      position: absolute;
+      left: -10px;
+      top: 5px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+
+    .timeline-info {
+      padding-left: 2rem;
+    }
+
+    .timeline-date {
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-card {
+      position: relative;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease;
+      overflow: hidden;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .timeline-card h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: #333;
+    }
+
+    .timeline-card h4 {
+      margin: 0.2rem 0 0.6rem;
+      font-size: 1rem;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .timeline-card p {
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* === CARD HEADER WITH LOGO === */
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-text h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: #1e2a33;
+    }
+
+    .card-text h4 {
+      margin: 0.25rem 0 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .card-text h5 {
+      margin: 0.25rem 0 0;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #333;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
+
+    /* === CIRCULAR LOGO === */
+
+    .logo-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* <<< this is the magic */
+      border-radius: 50%;
+    }
+
+    /* === PASTEL GRADIENT CARD BACKGROUNDS === */
+    .timeline-card {
+      position: relative;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease;
+      backdrop-filter: blur(6px);
+      color: #333;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    /* Example gradient options */
+    .gradient-1 {
+      background: linear-gradient(135deg, #fef4c3, #d8f8e1);
+    }
+
+    .gradient-2 {
+      background: linear-gradient(135deg, #fbeaff, #c5e4ff);
+    }
+
+    .gradient-3 {
+      background: linear-gradient(135deg, #fce3e3, #fef5d7);
+    }
+
+    .gradient-4 {
+      background: linear-gradient(135deg, #fdd9d9, #fff4cc);
+    }
+
+    .gradient-5 {
+      background: linear-gradient(135deg, #d4f4f9, #f2d9f8);
+    }
+
+    .gradient-6 {
+      background: linear-gradient(135deg, #ffe0cc, #e3d9ff);
+    }
+
+    /* Adjust text */
+    .timeline-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    #skills {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    #skills h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      justify-items: center;
+    }
+
+    .skill-flip {
+      perspective: 1000px;
+      width: 200px;
+      height: 200px;
+    }
+
+    .flip-inner {
+      position: relative;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+    }
+
+    .skill-flip:hover .flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* Front face */
+    .flip-front,
+    .flip-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+
+    /* FRONT SIDE */
+    .flip-front {
+      z-index: 2;
+      transform: rotateY(0deg);
+      flex-direction: column;
+    }
+
+    .flip-front img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      z-index: 0;
+      opacity: 0.2;
+    }
+
+    .flip-front .skill-label {
+      position: relative;
+      z-index: 1;
+      color: #333;
+      font-weight: 600;
+      font-size: 2.0rem;
+      text-align: center;
+      padding: 0.3rem 0.6rem;
+    }
+
+    /* BACK SIDE */
+    .flip-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(135deg, #fef4c3, #d8f8e1);
+    }
+
+    .flip-back .skill-years {
+      position: relative;
+      z-index: 1;
+      color: #333;
+      font-weight: 600;
+      font-size: 2.0rem;
+      text-align: center;
+      padding: 0.3rem 0.6rem;
+    }
+
+    .pdf-frame {
+      width: 100%;
+      height: 70vh;
+      border-radius: 0 0 12px 12px;
+    }
+
   </style>
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+  </script>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
+
 </head>
 <body>
   <!-- <header>
@@ -256,162 +820,413 @@
     </div>
   </header>
 
-  <nav>
+  <!-- <nav>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
     <a href="#education">Education</a>
     <a href="#contact">Contact</a>
+  </nav> -->
+
+  <nav class="navbar">
+    <!-- <div class="nav-logo">Francisco Lourenço</div> -->
+    <ul class="nav-links">
+      <li><a href="#about"><button class="nav-key">About</button></a></li>
+      <li><a href="#projects"><button class="nav-key">Projects</button></a></li>
+      <li><a href="#experience"><button class="nav-key">Experience</button></a></li>
+      <li><a href="#education"><button class="nav-key">Education</button></a></li>
+      <li><a href="#skills"><button class="nav-key">Skills</button></a></li>
+      <li><a href="#contact"><button class="nav-key">Contact</button></a></li>
+    </ul>
   </nav>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>
-      
-      I’m Francisco Lourenço, a Machine Learning and Computer Vision Engineer with a strong focus on 3D data. What drives me is the opportunity to replicate — and in some ways, expand on — one of the most fundamental aspects of human experience: visual perception. The ability to translate our understanding of the world into intelligent systems is not only fascinating from a technical standpoint, but also incredibly meaningful in terms of impact.
-      <br><br>
-      Machine Learning and Computer Vision sit at the core of the technological transformation we’re witnessing today. These fields are not only enabling machines to interpret and interact with the world visually — they’re reshaping industries, streamlining operations, and opening entirely new possibilities for human-computer interaction. When extended into 3D data, the potential becomes even more profound. We don’t live in a 2D world, and systems that can reason about depth, shape, and spatial relationships offer a foundation for breakthroughs in automation, robotics, design, and beyond. For engineers like myself, working in this space means constantly solving high-impact problems at the intersection of perception, intelligence, and innovation.
-      <br><br>
-      I’ve been experimenting with machines, computers, and robotics from a young age, influenced by my father, who’s also an electrical engineer. At one point during my teenage years, I built a simple robot that used a camera and motors to follow an object around, as a playful attempt at automating how golfers carry their equipment. It wasn’t a revolutionary project, but it reflected the same mindset I bring to my work today: blending creativity, technical knowledge, and a hands-on approach to building systems that do something meaningful. Whether it's designing a custom 3D scanner with minimal hardware or solving real-world vision problems, that instinct to create and experiment has been a constant throughout my life.
-      <br><br>
-      I’m particularly drawn to working on end-to-end systems — from initial research and prototyping to development, fine-tuning, and deployment. I enjoy full ownership over what I build, not because I shy away from teamwork (on the contrary — I value knowledge-sharing and technical discussions), but because I thrive when I have the space and responsibility to dive deep into a problem and solve it thoroughly. That’s where I deliver my best work.
-      <br><br>
-      Throughout my career, I’ve been trusted to lead and deliver technically challenging solutions, especially in fast-paced startup environments. One example is the 3D scanner I built for coatingAI, where I developed a scanning system using just a single RGB-D camera and strategically placed QR code markers to enable accurate camera localization and point cloud fusion — all designed and prototyped remotely during the early months of my first job.
-      <br><br>
-      Colleagues and managers have consistently described me as highly independent, creative, and committed. I take pride in building systems that work — not just theoretically, but in production, solving real problems for real users.
-      <br><br>
-      I'm currently open to remote opportunities, whether freelance or full-time, and I’m especially drawn to startups or small, agile teams where I can have meaningful impact and wear multiple hats. I bring a balance of deep technical expertise, a drive to keep learning, and a strong sense of responsibility for everything I work on.
-      <br><br>
-      If you're looking for someone who combines technical excellence with ownership, creativity, and a real passion for building intelligent systems — I’d be happy to connect.
-    </p>
-    </section>
+    <div class="about-large-card" onclick="openModal('aboutModal')">
+      <div class="about-overlay">
+        <h3>Francisco Lourenço</h3>
+        <p>ML & CV Engineer | Passionate about 3D Perception, Creativity, and Elegant AI Systems</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Modal -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-content animate-modal" style="background-image: url('img/about_me.png'); background-size: cover; background-position: center;">
+      <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+      <h2>About Me</h2>
+      <p>
+        I’m Francisco Lourenço, a Machine Learning and Computer Vision Engineer with a strong focus on 3D data. 
+        What drives me is the opportunity to replicate — and in some ways, expand on — one of the most fundamental 
+        aspects of human experience: visual perception. The ability to translate our understanding of the world into 
+        intelligent systems is not only fascinating from a technical standpoint, but also incredibly meaningful in terms of impact.
+        <br><br>
+        Machine Learning and Computer Vision sit at the core of the technological transformation we’re witnessing today. 
+        These fields are not only enabling machines to interpret and interact with the world visually — they’re reshaping industries, 
+        streamlining operations, and opening entirely new possibilities for human-computer interaction. When extended into 3D data, 
+        the potential becomes even more profound. We don’t live in a 2D world, and systems that can reason about depth, shape, and 
+        spatial relationships offer a foundation for breakthroughs in automation, robotics, design, and beyond. For engineers like 
+        myself, working in this space means constantly solving high-impact problems at the intersection of perception, intelligence, 
+        and innovation.
+        <br><br>
+        I’ve been experimenting with machines, computers, and robotics from a young age, influenced by my father, who’s also an 
+        electrical engineer. Early on, I took part in two editions of F1 in Schools (2012 and 2013), where I developed a passion 
+        for hands-on engineering and teamwork under pressure. That enthusiasm carried into my participation in the National Robotics 
+        Festival (2014), where I began exploring autonomous systems and creative problem-solving through robotics.
+        <br><br>
+        One of my most memorable early experiments was a robot I built as a teenager that used a camera and servo motors to follow a 
+        specific object around — my idea was to help golfers automate the task of carrying their equipment. It was a playful project, 
+        but it captured the spirit that still drives my work today: blending creativity, technical knowledge, and practical implementation 
+        to build intelligent systems that interact meaningfully with the world.
+        <br><br>
+        I’m particularly drawn to working on end-to-end systems — from initial research and prototyping to development, fine-tuning, 
+        and deployment. I enjoy full ownership over what I build, not because I shy away from teamwork (on the contrary — I value 
+        knowledge-sharing and technical discussions), but because I thrive when I have the space and responsibility to dive deep into a 
+        problem and solve it thoroughly. That’s where I deliver my best work.
+        <br><br>
+        Throughout my career, I’ve been trusted to lead and deliver technically challenging solutions, especially in fast-paced startup 
+        environments. One example is the 3D scanner I built for coatingAI, where I initially developed a scanning system using just a single RGB-D 
+        camera and strategically placed QR code markers to enable accurate camera localization and point cloud fusion — all designed and 
+        prototyped remotely during the early months of my first job.
+        <br><br>
+        Colleagues and managers have consistently described me as highly independent, creative, and committed. I take pride in building 
+        systems that work — not just theoretically, but in production, solving real problems for real users.
+        <br><br>
+        I'm currently open to remote opportunities, whether freelance or full-time, and I’m especially drawn to startups or small, agile 
+        teams where I can have meaningful impact and wear multiple hats. I bring a balance of deep technical expertise, a drive to keep 
+        learning, and a strong sense of responsibility for everything I work on.
+        <br><br>
+        If you're looking for someone who combines technical excellence with ownership, creativity, and a real passion for building 
+        intelligent systems — I’d be happy to connect.</p>
 
-  <!-- <section id="projects">
-    <h2>Highlighted Projects</h2>
-    <div class="project">
-      <h3>Animate Anything: 3D Shape Classification, Alignment, & Segmentation</h3>
-      <p><strong>Company:</strong> Anything World</p>
-      <p>Developed and deployed ML models for 3D shape classification, alignment, and part segmentation, used in the Animate Anything tool: <a href="https://app.anything.world" target="_blank">app.anything.world</a>.</p>
+        <div class="about-photo-wrapper">
+          <img src="img/yo_y_meli.jpg" alt="Francisco and his girlfriend" class="about-photo" />
+          <p class="about-photo-caption">Me and my beautiful girlfriend at a coffee shop in the country side of Colombia 💛</p>
+        </div>
+
     </div>
-    <div class="project">
-      <h3>3D Scanner for Powder Coating</h3>
-      <p><strong>Company:</strong> coatingAI</p>
-      <p>Created a 3D scanning system using a multi stereo-camera setup from scratch for industrial inspection and automation purposes.</p>
-    </div>
-    <div class="project">
-      <h3>6DoF Object Pose Estimation</h3>
-      <p><strong>Thesis:</strong> University of Coimbra</p>
-      <p>Developed a deep learning approach for 6DoF pose estimation from RGB-D images. Scored 19/20 on final thesis defense.</p>
-    </div>
-  </section> -->
+  </div>
+
+    <!-- <p>
+      I’m Francisco Lourenço, a Machine Learning and Computer Vision Engineer with a strong focus on 3D data. 
+      What drives me is the opportunity to replicate — and in some ways, expand on — one of the most fundamental 
+      aspects of human experience: visual perception. The ability to translate our understanding of the world into 
+      intelligent systems is not only fascinating from a technical standpoint, but also incredibly meaningful in terms of impact.
+      <br><br>
+      Machine Learning and Computer Vision sit at the core of the technological transformation we’re witnessing today. 
+      These fields are not only enabling machines to interpret and interact with the world visually — they’re reshaping industries, 
+      streamlining operations, and opening entirely new possibilities for human-computer interaction. When extended into 3D data, 
+      the potential becomes even more profound. We don’t live in a 2D world, and systems that can reason about depth, shape, and 
+      spatial relationships offer a foundation for breakthroughs in automation, robotics, design, and beyond. For engineers like 
+      myself, working in this space means constantly solving high-impact problems at the intersection of perception, intelligence, 
+      and innovation.
+      <br><br>
+      I’ve been experimenting with machines, computers, and robotics from a young age, influenced by my father, who’s also an 
+      electrical engineer. At one point during my teenage years, I built a simple robot that used a camera and motors to follow 
+      an object around, as a playful attempt at automating how golfers carry their equipment. It wasn’t a revolutionary project, 
+      but it reflected the same mindset I bring to my work today: blending creativity, technical knowledge, and a hands-on approach 
+      to building systems that do something meaningful. Whether it's designing a custom 3D scanner with minimal hardware or solving 
+      real-world vision problems, that instinct to create and experiment has been a constant throughout my life.
+      <br><br>
+      I’m particularly drawn to working on end-to-end systems — from initial research and prototyping to development, fine-tuning, 
+      and deployment. I enjoy full ownership over what I build, not because I shy away from teamwork (on the contrary — I value 
+      knowledge-sharing and technical discussions), but because I thrive when I have the space and responsibility to dive deep into a 
+      problem and solve it thoroughly. That’s where I deliver my best work.
+      <br><br>
+      Throughout my career, I’ve been trusted to lead and deliver technically challenging solutions, especially in fast-paced startup 
+      environments. One example is the 3D scanner I built for coatingAI, where I developed a scanning system using just a single RGB-D 
+      camera and strategically placed QR code markers to enable accurate camera localization and point cloud fusion — all designed and 
+      prototyped remotely during the early months of my first job.
+      <br><br>
+      Colleagues and managers have consistently described me as highly independent, creative, and committed. I take pride in building 
+      systems that work — not just theoretically, but in production, solving real problems for real users.
+      <br><br>
+      I'm currently open to remote opportunities, whether freelance or full-time, and I’m especially drawn to startups or small, agile 
+      teams where I can have meaningful impact and wear multiple hats. I bring a balance of deep technical expertise, a drive to keep 
+      learning, and a strong sense of responsibility for everything I work on.
+      <br><br>
+      If you're looking for someone who combines technical excellence with ownership, creativity, and a real passion for building 
+      intelligent systems — I’d be happy to connect.
+    </p> -->
+    </section>
 
   <section id="projects">
     <h2>Highlighted Projects</h2>
     <div class="projects-grid">
-  
-      <a href="projects/3d-shape-classification.html" class="project-card">
-        <div class="card-image" style="background-image: url('img/classification.png');"></div>
-        <div class="card-content">
-          <h3>3D Shape Classification System</h3>
-          <p>Anything World</p>
-        </div>
-      </a>
-  
-      <a href="projects/3d-shape-alignment.html" class="project-card">
+      
+      <!-- <a href="projects/3d-shape-alignment.html" class="project-card">
         <div class="card-image" style="background-image: url('img/alignment.png');"></div>
         <div class="card-content">
           <h3>3D Shape Automatic Alignment</h3>
           <p>Anything World</p>
         </div>
-      </a>
+      </a> -->
+
+      <!-- Project Cards -->
+      <div class="project-card" style="background-image: url('img/classification.png');" onclick="openModal('modal1')">
+        <div class="card-content">
+          <h3>3D Shape Classification System</h3>
+          <p>Anything World</p>
+        </div>
+      </div>
   
-      <a href="projects/3d-shape-segmentation.html" class="project-card">
-        <div class="card-image" style="background-image: url('img/segmentation.png');"></div>
+      <div class="project-card" style="background-image: url('img/alignment.png');" onclick="openModal('modal2')">
+        <div class="card-content">
+          <h3>3D Shape Automatic Alignment</h3>
+          <p>Anything World</p>
+        </div>
+      </div>
+  
+      <div class="project-card" style="background-image: url('img/segmentation.png');" onclick="openModal('modal3')">
         <div class="card-content">
           <h3>3D Shape Part Segmentation System</h3>
           <p>Anything World</p>
         </div>
-      </a>
+      </div>
   
-      <a href="projects/3d-scanner.html" class="project-card">
-        <div class="card-image" style="background-image: url('img/scanner.png');"></div>
+      <div class="project-card" style="background-image: url('img/scanner.png');" onclick="openModal('modal4')">
         <div class="card-content">
-          <h3>Custom Multi RGB-D camera system based 3D scanner</h3>
+          <h3>Custom Multi RGB-D Camera System Based 3D scanner</h3>
           <p>coatingAI</p>
         </div>
-      </a>
-  
-      <a href="projects/glass_bottle.html" class="project-card">
-        <div class="card-image" style="background-image: url('img/glass_bottle.png');"></div>
+      </div>
+
+      <div class="project-card" style="background-image: url('img/glass_bottle.png');" onclick="openModal('modal5')">
         <div class="card-content">
           <h3>Anomaly Detection System for a Glass Bottle Production Line</h3>
           <p>Vidrotec</p>
         </div>
-      </a>
+      </div>
 
-      <a href="projects/masters-thesis.html" class="project-card">
-        <div class="card-image" style="background-image: url('img/thesis.png');"></div>
+      <div class="project-card" style="background-image: url('img/thesis.png');" onclick="openModal('modal6')">
         <div class="card-content">
           <h3>6DoF Object Pose Estimation from RGB-D Images
             Using Machine Learning Approaches</h3>
           <p>Master Thesis</p>
         </div>
-      </a>
+      </div>
   
-      <a href="projects/paper-depth-estimation.html" class="project-card">
-        <div class="card-image" style="background-image: url('img/depth.png');"></div>
+      <div class="project-card" style="background-image: url('img/depth.png');" onclick="openModal('modal7')">
         <div class="card-content">
           <h3>Intel RealSense SR305, D415 and L515:
             Experimental Evaluation and Comparison of
             Depth Estimation</h3>
           <p>VISIGRAPP 2021 International Conference</p>
         </div>
-      </a>
+      </div>
   
-      <a href="projects/paper-pose-estimation.html" class="project-card">
-        <div class="card-image" style="background-image: url('img/pose.png');"></div>
+      <div class="project-card" style="background-image: url('img/pose.png');" onclick="openModal('modal8')">
         <div class="card-content">
           <h3>Evaluation of the Accuracy of Pose Estimation Based on Relative Pose</h3>
           <p>RECPAD 2021 Portuguese Conference</p>
         </div>
-      </a>
+      </div>
+
+      <!-- <div class="project-card" style="background-image: url('img/robotics.jpg');" onclick="openModal('modal9')">
+        <h3>Robotics Festival 2014</h3>
+      </div>
   
-      <!-- <a href="projects/robotics-festival.html" class="project-card">
-        <div class="card-image" style="background-image: url('img/robotics.jpg');"></div>
-        <div class="card-content">
-          <h3>Robotics Festival 2014</h3>
-          <p>National robotics competition – Portugal</p>
-        </div>
-      </a>
+      <div class="project-card" style="background-image: url('img/f1-2013.jpg');" onclick="openModal('modal10')">
+        <h3>F1 in Schools – 2013</h3>
+      </div>
   
-      <a href="projects/f1-in-schools-2013.html" class="project-card">
-        <div class="card-image" style="background-image: url('img/f1-2013.jpg');"></div>
-        <div class="card-content">
-          <h3>F1 in Schools – 2013</h3>
-          <p>Team competition – STEM & racing design</p>
-        </div>
-      </a>
+      <div class="project-card" style="background-image: url('img/f1-2012.jpg');" onclick="openModal('modal11')">
+        <h3>F1 in Schools – 2012</h3>
+      </div>
   
-      <a href="projects/f1-in-schools-2012.html" class="project-card">
-        <div class="card-image" style="background-image: url('img/f1-2012.jpg');"></div>
-        <div class="card-content">
-          <h3>F1 in Schools – 2012</h3>
-          <p>First participation in engineering competition</p>
-        </div>
-      </a>
-  
-      <a href="projects/object-following-robot.html" class="project-card">
-        <div class="card-image" style="background-image: url('img/robot.jpg');"></div>
-        <div class="card-content">
-          <h3>Vision-Guided Robot</h3>
-          <p>Early personal project for object tracking and mobility</p>
-        </div>
-      </a> -->
-  
+      <div class="project-card" style="background-image: url('img/robot.jpg');" onclick="openModal('modal12')">
+        <h3>Vision-Guided Robot</h3>
+      </div> -->
     </div>
+  
+    <!-- Modal Templates -->
+    <div id="modal1" class="modal">
+      <div class="modal-content" style="background-image: url('img/classification.png');">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <h2>3D Shape Classification System</h2>
+        <p>This was a fully end-to-end solution I designed and delivered for Anything World. 
+          The objective was to develop a robust classification system to support both the Anything 
+          World API and the <a href="https://app.anything.world/animation-rigging">Animate Anything</a> tool, 
+          which enables automatic rigging and animation of 3D characters.
+          <br><br>
+          Since different character types require distinct animation behaviors 
+          (e.g., a human moves on two legs, a dog on four, and a car uses spinning wheels), 
+          understanding the character's category is essential prior to animation. 
+          The tool supports over 50 categories, making accurate classification a foundational requirement.
+          <br><br>
+          I was responsible for researching, developing, and deploying a classification pipeline capable of 
+          taking an <strong>unaligned 3D mesh</strong> as input and outputting a <strong>single predicted class</strong> 
+          from the supported set.
+          <br><br>
+          After an in-depth literature review, I implemented and adapted a state-of-the-art <strong>multi-view graph convolutional neural 
+          network</strong> approach. The method renders multiple images of the 3D shape from evenly spaced viewpoints, extracts 
+          global features per image, and connects them in a graph structure processed by a GCN.
+          <br><br>
+          I introduced several custom modifications to the architecture to optimize performance and <strong>make it 
+          rotation-invariant</strong>, addressing the core challenge of working with unaligned meshes. These adaptations 
+          were specifically designed to meet the needs of real-world deployment within Anything World’s production 
+          environment.
+          <br><br>
+          The final model achieved a <strong>95.6% F1-score</strong> on the <strong>rotated ModelNet40 benchmark</strong> — which, to the best of my knowledge, 
+          was a <strong>state-of-the-art result</strong> on this dataset at the time (2023).</p>
+      </div>
+    </div>
+  
+    <div id="modal2" class="modal">
+      <div class="modal-content" style="background-image: url('img/alignment.png');">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <h2>3D Shape Automatic Alignment</h2>
+        <p>This was a fully end-to-end project I led at Anything World, aimed at developing an automatic 
+          3D alignment system to support both the Anything World API and the 
+          <a href="https://app.anything.world/animation-rigging">Animate Anything</a> tool.
+          <br><br>
+          The objective was to rotate unaligned 3D characters into a <strong>canonical orientation</strong> before they 
+          were passed into the rigging and animation pipelines. Since these systems are <strong>rotation-variant</strong>, 
+          their performance was highly dependent on the initial pose of the character — making consistent 
+          alignment a critical pre-processing step.
+          <br><br>
+          I was tasked with researching, designing, and deploying a system that would take any <strong>unaligned 
+          3D mesh</strong> as input and return a <strong>rotation matrix</strong> aligning the model to a predefined canonical pose.
+          <br><br>
+          After a comprehensive literature review, I found that existing methods did not meet the accuracy 
+          demands of our production requirements. As a result, I developed a <strong>custom hybrid method</strong> combining 
+          ideas from several academic approaches with in-house techniques I designed.
+          <br><br>
+          The resulting system — a proprietary method called <strong>“Symmetry-Aware and Base-Plane-Aided 3-Step 
+          Rotation Estimation”</strong> — achieved outstanding results. On a dataset of <strong>220 diverse 3D characters</strong> 
+          across <strong>56 categories</strong> (including people, animals, vehicles, and objects), it achieved a <strong>median mean 
+          angular error (MAE)</strong> of just <strong>2.47°</strong>, meaning the system delivered <strong>near-perfect alignment</strong> 
+          in the vast majority of cases.
+          <br><br>
+          This solution is now a key component of the Anything World pipeline and is used in real-time for 
+          character animation and rigging in production.</p>
+      </div>
+    </div>
+  
+    <div id="modal3" class="modal">
+      <div class="modal-content" style="background-image: url('img/segmentation.png');">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <h2>3D Shape Part Segmentation System</h2>
+        <p>This was another end-to-end project I developed at Anything World, focused on <strong>3D shape part segmentation</strong> — a key step 
+          in the automatic rigging and animation of 3D characters. The objective was to identify the precise location of specific 
+          semantic parts (e.g., arms, legs, body) within 3D models to enable accurate joint placement and deformation.
+          <br><br>
+          Unlike the classification and alignment tasks I previously solved, a segmentation system was already integrated into 
+          both the Animate Anything tool and the Anything World API. My role was to either optimize the existing solution or design 
+          a more effective one from scratch.
+          <br><br>
+          After several iterations attempting to improve the current model, we determined that it had already been optimized 
+          to its full potential in terms of accuracy. As a result, I conducted a new round of literature review, identified a 
+          state-of-the-art method with potential advantages, and implemented a fresh solution for evaluation.
+          <br><br>
+          The newly developed model achieved <strong>similar accuracy</strong> to the existing system, thus revealing a likely <strong>dataset 
+          bottleneck</strong>. However, the key breakthrough was that my solution was <strong>significantly more efficient</strong> — offering 
+          reduced training time and substantially faster inference, which aligned better with our production requirements.
+          <br><br>
+          The final system was based on a <strong>graph convolutional network (GCN) for point clouds</strong>, enriched with ideas from multiple 
+          research papers. It achieved <strong>88.8% mIoU</strong> on the <strong>ShapeNet Part</strong> benchmark — a competitive score, 
+          on par with the top-performing models on this dataset.
+          <br><br>
+          Thanks to its performance and speed, this new solution was successfully deployed into Anything World's production pipeline.</p>
+      </div>
+    </div>
+  
+    <div id="modal4" class="modal">
+      <div class="modal-content" style="background-image: url('img/scanner.png');">
+        <span class="close" onclick="closeModal('modal4')">&times;</span>
+        <h2>Custom Multi RGB-D Camera System Based 3D scanner</h2>
+        <p>coatingAI is a startup pioneering the use of AI in the <strong>powder coating industry</strong>, with the goal of improving 
+          efficiency and reducing material waste while maximizing quality and precision.
+          <br><br>
+          A critical component of their pipeline involved obtaining a <strong>high-fidelity 3D understanding</strong> of the parts 
+          entering the powder coating line. I was brought on as their first 3D Computer Vision Engineer and was tasked with researching, 
+          designing, and deploying a <strong>custom multi-camera 3D scanning system</strong> — built entirely from scratch.
+          <br><br>
+          The system was based on multiple RGB-D cameras capturing metallic parts in motion, which were later fused into a full 3D model. 
+          Since I initially worked fully remotely from Coimbra, Portugal, I built a physical replica of the powder coating line in my office 
+          to prototype the solution. This setup included a metallic structure with movable mounts, allowing me to simulate the part transport 
+          mechanism and validate the camera placements.
+          <br><br>
+          In addition to the hardware design, I developed the full software pipeline responsible for processing the RGB-D data, estimating 
+          camera positions, and generating an accurate 3D scan of each part as it moved through the system.
+          <br><br>
+          The final solution delivered <strong>precise and consistent 3D reconstructions</strong> of metallic parts in real-time, and was successfully deployed 
+          into coatingAI’s production environment — enabling downstream automation for coating quality optimization.
+        </p>
+      </div>
+    </div>
+  
+    <div id="modal5" class="modal">
+      <div class="modal-content" style="background-image: url('img/glass_bottle.png');">
+        <span class="close" onclick="closeModal('modal5')">&times;</span>
+        <h2>Anomaly Detection System for a Glass Bottle Production Line</h2>
+        <p>This was a research-focused project I contributed to at the <strong>Institute of Systems and Robotics (ISR)</strong>, 
+        <strong>University of Coimbra</strong>, aimed at developing a <strong>computer vision–based anomaly detection system</strong> for a glass bottle production line.
+          <br><br>
+          My role centered on two key areas:
+          
+          <ul>
+            <li>Designing and implementing the <strong>anomaly detection software</strong> responsible for identifying visual defects or irregularities in real time
+            <li>Contributing to the optimization of the <strong>camera setup</strong>, including the number, placement, and calibration of cameras to maximize inspection 
+              coverage and accuracy
+          </ul>
+          This project combined elements of <strong>classical and learning-based vision approaches</strong>, and was designed to operate under the 
+          high-throughput and precision requirements of industrial production lines.
+        </p>
+      </div>
+    </div>
+
+    <div id="modal6" class="modal">
+      <div class="modal-content" style="background-image: url('img/thesis.png');">
+        <span class="close" onclick="closeModal('modal6')">&times;</span>
+        <h2>6DoF Object Pose Estimation from RGB-D Images
+          Using Machine Learning Approaches</h2>
+        <iframe 
+          src="pdf/TESE_MESTRADO_Francisco_Lourenco.pdf" 
+          frameborder="0" 
+          class="pdf-frame" 
+          title="Paper PDF">
+        </iframe>
+      </div>
+    </div>
+
+    <div id="modal7" class="modal">
+      <div class="modal-content" style="background-image: url('img/depth.png');">
+        <span class="close" onclick="closeModal('modal7')">&times;</span>
+        <h2>Intel RealSense SR305, D415 and L515:
+          Experimental Evaluation and Comparison of
+          Depth Estimation</h2>
+        <iframe 
+          src="pdf/Intel RealSense SR305 D415 and L515.pdf" 
+          frameborder="0" 
+          class="pdf-frame" 
+          title="Paper PDF">
+        </iframe>
+      </div>
+    </div>
+
+    <div id="modal8" class="modal">
+      <div class="modal-content" style="background-image: url('img/pose.png');">
+        <span class="close" onclick="closeModal('modal8')">&times;</span>
+        <h2>Evaluation of the Accuracy of Pose Estimation Based on Relative Pose</h2>
+        <iframe 
+          src="pdf/RECPAD_2021_paper_46.pdf" 
+          frameborder="0" 
+          class="pdf-frame" 
+          title="Paper PDF">
+        </iframe>
+      </div>
+    </div>
+
+
+
+
+          
+    <!-- Repeat for modal5 to modal11... -->
+  
   </section>
 
-  <section id="experience">
+  <!-- <section id="experience">
     <h2>Experience</h2>
     <p><strong>Machine Learning Engineer</strong> – Anything World (Jan 2023 – Present)</p>
     <ul>
@@ -422,13 +1237,355 @@
       <li>Designed a 3D scanning solution for industrial automation as the sole CV engineer.</li>
     </ul>
     <p><strong>Junior Researcher</strong> – Institute of Systems and Robotics (Jan 2021 – Jun 2021)</p>
+  </section> -->
+
+  <section id="experience">
+      
+      <h2>Experience</h2>
+      <div class="timeline-artistic">
+        
+        <div class="timeline-entry">
+          <div class="timeline-marker"></div>
+          <div class="timeline-info">
+            <div class="timeline-date">Jan 2023 – Present</div>
+            <div class="timeline-card gradient-1">
+              <div class="card-header">
+                <div class="card-text">
+                  <h3>Machine Learning Engineer</h3>
+                  <h4>Anything World</h4>
+                  <h5>London, UK 📍 (remote)</h5>
+                </div>
+                <div class="logo-circle">
+                  <img src="img/anything_world_logo.jpeg" alt="Anything World Logo">
+                </div>
+              </div>
+              <ul>
+                <li>At Anything World I was responsible for researching, developing, and
+                implementing three large ML solutions that are currently in production and
+                being used in the ”Animate Anything” tool available at
+                <a href=https://app.anything.world>Anything World</a>. These solutions are 3D shape classification,
+                3D shape alignment, and 3D part segmentation.
+                <li>I also worked in many other smaller ML and software engineering tasks.</p>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="timeline-artistic">
+      
+        <div class="timeline-entry">
+          <div class="timeline-marker"></div>
+          <div class="timeline-info">
+            <div class="timeline-date">Sep 2021 – Jan 2023</div>
+            <div class="timeline-card gradient-2">
+              <div class="card-header">
+                <div class="card-text">
+                  <h3>3D Computer Vision Engineer</h3>
+                  <h4>coatingAI</h4>
+                  <h5>Barcelona, Spain 📍</h5>
+                </div>
+                <div class="logo-circle">
+                  <img src="img/coatingai_logo.jpeg" alt="coatingAI Logo">
+                </div>
+              </div>
+              <ul>
+                <li>At contingAI, by joining the start‐up at a very early stage as the only
+                  computer vision engineer, I developed a 3D scanner from scratch using a
+                  multi stereo‐camera system for a powder coating line.
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="timeline-artistic">
+      
+          <div class="timeline-entry">
+            <div class="timeline-marker"></div>
+            <div class="timeline-info">
+              <div class="timeline-date">Jan 2021 – Jun 2021</div>
+              <div class="timeline-card gradient-3">
+                <div class="card-header">
+                  <div class="card-text">
+                    <h3>Junior Researcher</h3>
+                    <h4>Institute of Systems and Robotics</h4>
+                    <h5>Coimbra, Portugal 📍</h5>
+                  </div>
+                  <div class="logo-circle">
+                    <img src="img/isr_logo.png" alt="ISR Logo">
+                  </div>
+                </div>
+                <ul>
+                  <li>At the Institute of Systems and Robotics I developed a computer vision based anomaly Detection
+                    system for a glass bottle production line.
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
   </section>
+
 
   <section id="education">
     <h2>Education</h2>
-    <p><strong>Master's in Electrical and Computer Engineering</strong> – University of Coimbra (2018–2021)</p>
-    <p><strong>Exchange Program</strong> – Aalto University (2018–2019)</p>
-    <p><strong>Bachelor’s in Electrical and Computer Engineering</strong> – University of Coimbra (2015–2018)</p>
+    <div class="timeline-artistic">
+        
+      <div class="timeline-entry">
+        <div class="timeline-marker"></div>
+        <div class="timeline-info">
+          <div class="timeline-date"> 2018 – 2021</div>
+          <div class="timeline-card gradient-4">
+            <div class="card-header">
+              <div class="card-text">
+                <h3>Masters in Electrical and Computer Engineering</h3>
+                <h4>University of Coimbra</h4>
+                <h5>Coimbra, Portugal 📍</h5>
+              </div>
+              <div class="logo-circle">
+                <img src="img/uc_logp.png" alt="University of Coimbra Logo">
+              </div>
+            </div>
+            <ul>
+              <li>I focused my studies in <strong>Computer Vision/Machine learning</strong>.
+              <li>This is where I wrote my master thesis in the subject of 6DoF Object Pose
+                Estimation from RGB‐D Images using Machine Learning Approaches, and I
+                proudly achieved a score of <strong>19 out of 20</strong>.
+              <li>I got a <strong>4.4 GPA</strong> on my Master's degree.
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="timeline-artistic">
+    
+      <div class="timeline-entry">
+        <div class="timeline-marker"></div>
+        <div class="timeline-info">
+          <div class="timeline-date">Sep 2021 – Jan 2023</div>
+          <div class="timeline-card gradient-5">
+            <div class="card-header">
+              <div class="card-text">
+                <h3>Masters in Electrical and Computer Engineering</h3>
+                <h4>Exchange studies at Aalto University</h4>
+                <h5>Espoo, Finland 📍</h5>
+              </div>
+              <div class="logo-circle">
+                <img src="img/aalto_logo.jpeg" alt="Aalto Logo">
+              </div>
+            </div>
+            <ul>
+              <li>For my exchange studies, I went to Aalto University in Finland.
+              <li>Here, I got the chance to develop both my soft and English speaking skills.
+              <li>This is where I completed the first year of my Master's degree.
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-artistic">
+  
+      <div class="timeline-entry">
+        <div class="timeline-marker"></div>
+        <div class="timeline-info">
+          <div class="timeline-date">2018 – Jun 2019</div>
+          <div class="timeline-card gradient-6">
+            <div class="card-header">
+              <div class="card-text">
+                <h3>Bachelor’s degree in Electrical and Computer Engineering</h3>
+                <h4>University of Coimbra</h4>
+                <h5>Coimbra, Portugal 📍</h5>
+              </div>
+              <div class="logo-circle">
+                <img src="img/uc_logp.png" alt="University of Coimbra Logo">
+              </div>
+            </div>
+            <ul>
+              <li>I completed my Bachelor’s degree here with <strong>4.1 GPA</strong>.
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+
+
+      <div class="skill-flip">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span class="skill-label">Python</span>
+            <img src="img/python.jpeg" alt="Python">
+          </div>
+          <div class="flip-back">
+            <span class="skill-years">7 yrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-flip">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span class="skill-label">PyTorch</span>
+            <img src="img/pytorch.jpg" alt="PyTorch">
+          </div>
+          <div class="flip-back">
+            <span class="skill-years">5 yrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-flip">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span class="skill-label">Tensorflow</span>
+            <img src="img/tensorflow.png" alt="Tensorflow">
+          </div>
+          <div class="flip-back">
+            <span class="skill-years">3 yrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-flip">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span class="skill-label">OpenCV</span>
+            <img src="img/opencv.png" alt="OpenCV">
+          </div>
+          <div class="flip-back">
+            <span class="skill-years">3 yrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-flip">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span class="skill-label">Open3D</span>
+            <img src="img/open3d.jpeg" alt="Open3D">
+          </div>
+          <div class="flip-back">
+            <span class="skill-years">5 yrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-flip">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span class="skill-label">C++</span>
+            <img src="img/cpp.png" alt="C++">
+          </div>
+          <div class="flip-back">
+            <span class="skill-years">4 yrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-flip">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span class="skill-label">SQL</span>
+            <img src="img/sql.png" alt="SQL">
+          </div>
+          <div class="flip-back">
+            <span class="skill-years">1 yrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-flip">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span class="skill-label">html</span>
+            <img src="img/html.jpg" alt="HTML">
+          </div>
+          <div class="flip-back">
+            <span class="skill-years">1 yrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-flip">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span class="skill-label">CSS</span>
+            <img src="img/css.png" alt="CSS">
+          </div>
+          <div class="flip-back">
+            <span class="skill-years">1 yrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-flip">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span class="skill-label">MatLab</span>
+            <img src="img/matlab.png" alt="MatLab">
+          </div>
+          <div class="flip-back">
+            <span class="skill-years">3 yrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-flip">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span class="skill-label">ROS</span>
+            <img src="img/ros.png" alt="ROS">
+          </div>
+          <div class="flip-back">
+            <span class="skill-years">1 yrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-flip">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span class="skill-label">Blender</span>
+            <img src="img/blender.png" alt="Blender">
+          </div>
+          <div class="flip-back">
+            <span class="skill-years">1 yrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-flip">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span class="skill-label">CAD</span>
+            <img src="img/cad.jpg" alt="CAD">
+          </div>
+          <div class="flip-back">
+            <span class="skill-years">3 yrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-flip">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span class="skill-label">Docker</span>
+            <img src="img/docker.jpg" alt="Docker">
+          </div>
+          <div class="flip-back">
+            <span class="skill-years">1 yrs</span>
+          </div>
+        </div>
+      </div>
+      <!-- Add more as needed -->
+    </div>
   </section>
 
   <section id="contact">
