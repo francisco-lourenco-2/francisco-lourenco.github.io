@@ -352,28 +352,26 @@
     }  */
 
     @media screen and (max-width: 768px) {
-      .header {
-        display: flex;
+      .overlay {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 2rem 1rem;
+        gap: 1rem;
       }
 
       .header-left {
-        order: -1; /* 👈 Forces the image div to go ABOVE the text */
+        order: -1;
+        width: 100%;
         display: flex;
         justify-content: center;
-        align-items: center;
-        margin-bottom: 1.5rem;
-        width: 100%;
       }
 
       .header-left img {
-        width: 100%;
-        max-width: 180px;
+        width: 180px;
+        max-width: 100%;
+        height: auto;
         border-radius: 24px;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        margin-bottom: 1rem;
       }
 
       .header-right {
@@ -382,20 +380,13 @@
       }
 
       .header-right h1 {
-        font-size: clamp(1.6rem, 5vw, 2.4rem);
+        font-size: clamp(1.8rem, 6vw, 2.4rem);
         line-height: 1.2;
-        margin-bottom: 0.5rem;
-      }
-
-      .header-right h2 {
-        font-size: clamp(1.2rem, 4vw, 1.6rem);
-        line-height: 1.3;
-        margin-bottom: 1rem;
       }
 
       .header-right p {
-        font-size: clamp(1rem, 3.8vw, 1.2rem);
-        line-height: 1.6;
+        font-size: clamp(1rem, 4.5vw, 1.4rem);
+        line-height: 1.5;
       }
     }
       /* background: rgba(255, 255, 255, 0.3);
