@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Francisco Lourenço | Portfolio</title>
   <style>
-    * {
+    /* * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
+    } */
 
     @font-face {
       font-family: 'Ubuntu-Bold';
@@ -60,7 +60,7 @@
     }
 
     body {
-      font-family: 'Ubuntu', 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif;;
+      font-family: 'Ubuntu', 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif;
       line-height: 1.6;
       margin: 0;
       padding: 0;
@@ -92,7 +92,7 @@
     }
 
     header {
-      font-family: 'Ubuntu';
+      font-family: 'Ubuntu', 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif;
 
       background-image: url('img/background/background_3.png');
       background-size: cover;
@@ -142,7 +142,7 @@
       display: inline-block;
       min-width: 120px;
       text-align: center;
-      font-family: 'Courier New', monospace;
+      font-family: 'Ubuntu', 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif;
     }
 
     .nav-key:hover {
@@ -301,10 +301,6 @@
       max-width: 1500px;
     }
 
-    .header-left {
-      flex-shrink: 0;
-    }
-
     .profile-pic {
       width: 500px;
       height: 500px;
@@ -315,11 +311,67 @@
       background: rgba(212, 255, 229, 0.3);
     }
 
+    /* .header-left {
+      flex-shrink: 0;
+    } */
+
+    /* 
     .header-right {
       text-align: left;
-      flex: 1; /* Let it grow */
-      min-width: 0;
+      flex: 1; 
+      min-width: 0; */
 
+    /* .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 1rem;
+      flex-wrap: wrap; 
+      gap: 1rem;
+    } */
+
+    /* .header-left {
+      flex: 0 1 280px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } */
+
+    /* .header-left img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 24px;
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.1);
+    } */
+
+    /* .header-right {
+      flex: 1;
+      min-width: 280px;
+      max-width: 2000px;
+      text-align: left;
+    }  */
+
+    @media screen and (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .header-right {
+        text-align: center;
+        padding: 0 1rem;
+      }
+
+      .header-left {
+        justify-content: center;
+      }
+
+      .header-left img {
+        max-width: 180px;
+        width: 100%;
+      }
+    }
       /* background: rgba(255, 255, 255, 0.3);
       backdrop-filter: blur(10px);
       border-radius: 16px;
@@ -329,7 +381,7 @@
       max-width: 600px;
       max-width: 700px; wider */
 
-    }
+    /* } */
     
     .header-right h1 {
       font-size: 4.0rem; /* Bigger name */
@@ -1133,7 +1185,7 @@
   </div>
 
 
-  <header>
+  <header class="header">
     <div class="overlay">
       <div class="header-left">
         <img src="img/about_me/me_no_bkg.png" alt="Francisco Lourenço" class="profile-pic">
