@@ -160,7 +160,8 @@
       bottom: 0;
       width: 100%;
       padding: 2rem;
-      background: linear-gradient(to top, rgba(255,255,255,0.85), rgba(255,255,255,0.4));
+      /* background: linear-gradient(to top, rgba(134, 134, 134, 0.3), rgba(255,255,255,0.4)); */
+      background: linear-gradient(to top, rgba(70, 70, 70, 0.9), rgba(70, 70, 70, 0));
       backdrop-filter: blur(8px);
       color: #1e2a33;
       border-radius: 0 0 20px 20px;
@@ -173,11 +174,12 @@
       margin: 0;
       font-size: 1.8rem;
       font-weight: bold;
+      color: #ffffff;
     }
 
     .about-overlay p {
       font-size: 1rem;
-      color: #444;
+      color: #ffffff;
     }
 
     .modal-content.animate-modal {
@@ -363,7 +365,9 @@
 
     .card-content {
       width: 100%;
-      background: rgba(134, 134, 134, 0.3);
+      /* background: rgba(134, 134, 134, 0.3); */
+      /* background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(134, 134, 134, 0.5)); */
+      background: linear-gradient(to top, rgba(70, 70, 70, 0.9), rgba(70, 70, 70, 0));
       padding: 0.5rem 1rem;
       text-align: left;
       border-radius: 0 0 12px 12px;
@@ -374,12 +378,14 @@
       margin: 0.4rem 0;
       font-size: 1.2rem;
       line-height: 1.2;
+      /* color: rgb(255, 255, 255); */
       color: rgb(255, 255, 255);
     }
 
     .card-content p {
       margin: 0.3rem 0 0;
       font-size: 0.95rem;
+      /* color: #ffffff; */
       color: #ffffff;
     } 
     
@@ -569,7 +575,7 @@
     .card-text h3 {
       margin: 0;
       font-size: 1.3rem;
-      color: #1e2a33;
+      color: #2a1e33;
     }
 
     .card-text h4 {
@@ -760,6 +766,174 @@
       border-radius: 0 0 12px 12px;
     }
 
+    #contact {
+      text-align: center;
+      padding: 4rem 2rem;
+      /* background: linear-gradient(135deg, #f6f0ff, #e1faff); */
+    }
+
+    .contact-grid {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      width: 230px;
+      transition: transform 0.2s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .contact-card img {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-video-wrapper {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .project-video {
+      width: 120%;
+      max-width: 700px;
+      aspect-ratio: 3840 / 2160; /* square shape */
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      object-fit: cover;
+    }
+
+    .video-caption {
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      color: #555;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .segmentation-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .segmentation-grid img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .segmentation-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 rgba(255, 255, 255, 0); }
+      50% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.25); }
+      100% { box-shadow: 0 0 0 rgba(255, 255, 255, 0); }
+    }
+
+    .hire-me-button {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      padding: 1.2rem 2rem;
+      background: linear-gradient(135deg, #ffd6a5, #d8f8e1);
+      color: #1e2a33;
+      font-weight: 800;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 24px;
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .hire-me-button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.9rem 1.1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      outline: none;
+      width: 100%;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #1e2a33;
+    }
+
+    .contact-form button {
+      align-self: flex-start;
+      padding: 0.75rem 1.6rem;
+      background: #1e2a33;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #333;
+    }
+
+    .form-success-message {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #2d8833;
+      font-weight: bold;
+      text-align: center;
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .animate-slideup {
+      animation: slideUp 0.5s ease-out;
+    }
+    
+
   </style>
   <script>
     function openModal(id) {
@@ -771,13 +945,48 @@
   </script>
 
   <script>
+    // function openModal(id) {
+    //   document.getElementById(id).style.display = 'block';
+    // }
+    
+    // function closeModal(id) {
+    //   document.getElementById(id).style.display = 'none';
+    // }
+
     function openModal(id) {
       document.getElementById(id).style.display = 'block';
     }
-    
+
     function closeModal(id) {
       document.getElementById(id).style.display = 'none';
+      document.getElementById("form-success").style.display = 'none';
     }
+
+    // Send via Formspree (fallback instead of mailto)
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = new FormData(form);
+
+      fetch("https://formspree.io/f/xqkrjkkn", {
+        method: "POST",
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          form.reset();
+          document.getElementById("form-success").style.display = 'block';
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("Error sending message.");
+      });
+    });
   </script>
 
 </head>
@@ -795,6 +1004,24 @@
       </p>
   </header> -->
 
+  <button class="hire-me-button" onclick="openModal('contactModal')">
+    💼 Hire Me
+  </button>
+
+  <div id="contactModal" class="modal">
+    <div class="modal-content animate-slideup">
+      <span class="close" onclick="closeModal('contactModal')">&times;</span>
+      <h3>Let's Work Together</h3>
+      <form class="contact-form" id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div id="form-success" class="form-success-message" style="display:none;">✅ Your message has been sent!</div>
+    </div>
+  </div>
+
   <header>
     <div class="overlay">
       <div class="header-left">
@@ -805,11 +1032,15 @@
         <!-- <p>Machine Learning 🤖 & Computer Vision Engineer 👁️</p>
         <p>3D Data Specialist 🧊</p> -->
         <!-- <p>🤖 ML • 👁️ CV • 📐 3D Data Specialist</p> -->
-        <p>🤖 Machine Learning • 👁️ Computer Vision • 🔲 3D Data Specialist</p>
-        <br>
-        <p><em>”A real team‐player, who has the
+        <!-- <p>🤖 Machine Learning • 👁️ Computer Vision • 🔲 3D Data Specialist</p> -->
+        <!-- <p>🤖 3D Data Specialist | ML & CV Engineer 👁️</p>
+        <p>Passionate about 3D Perception, Creativity, and Elegant AI Systems</p> -->
+        <p>🚀 Freelance 3D Data Specialist | ML & CV Engineer 🤖</p>
+        <p>Passionate about 3D Perception, Creativity, and Elegant AI Systems</p>
+        <!-- <br> -->
+        <!-- <p><em>”A real team‐player, who has the
           ability to work unsupervised and
-          drive strategic projects.”</em></p>
+          drive strategic projects.”</em></p> -->
         <!-- <p><a href="mailto:francisco.rlourenco@gmail.com">francisco.rlourenco@gmail.com</a> | Coimbra, Portugal</p>
         <p>
           <a href="https://linkedin.com/in/franciscorlourenco" target="_blank">LinkedIn</a> |
@@ -845,7 +1076,9 @@
     <div class="about-large-card" onclick="openModal('aboutModal')">
       <div class="about-overlay">
         <h3>Francisco Lourenço</h3>
-        <p>ML & CV Engineer | Passionate about 3D Perception, Creativity, and Elegant AI Systems</p>
+        <p><em>”A real team‐player, who has the
+          ability to work unsupervised and
+          drive strategic projects.”</em></p>
       </div>
     </div>
   </section>
@@ -856,48 +1089,65 @@
       <span class="close" onclick="closeModal('aboutModal')">&times;</span>
       <h2>About Me</h2>
       <p>
-        I’m Francisco Lourenço, a Machine Learning and Computer Vision Engineer with a strong focus on 3D data. 
-        What drives me is the opportunity to replicate — and in some ways, expand on — one of the most fundamental 
-        aspects of human experience: visual perception. The ability to translate our understanding of the world into 
-        intelligent systems is not only fascinating from a technical standpoint, but also incredibly meaningful in terms of impact.
-        <br><br>
-        Machine Learning and Computer Vision sit at the core of the technological transformation we’re witnessing today. 
-        These fields are not only enabling machines to interpret and interact with the world visually — they’re reshaping industries, 
-        streamlining operations, and opening entirely new possibilities for human-computer interaction. When extended into 3D data, 
-        the potential becomes even more profound. We don’t live in a 2D world, and systems that can reason about depth, shape, and 
-        spatial relationships offer a foundation for breakthroughs in automation, robotics, design, and beyond. For engineers like 
-        myself, working in this space means constantly solving high-impact problems at the intersection of perception, intelligence, 
-        and innovation.
-        <br><br>
-        I’ve been experimenting with machines, computers, and robotics from a young age, influenced by my father, who’s also an 
-        electrical engineer. Early on, I took part in two editions of F1 in Schools (2012 and 2013), where I developed a passion 
-        for hands-on engineering and teamwork under pressure. That enthusiasm carried into my participation in the National Robotics 
-        Festival (2014), where I began exploring autonomous systems and creative problem-solving through robotics.
-        <br><br>
-        One of my most memorable early experiments was a robot I built as a teenager that used a camera and servo motors to follow a 
-        specific object around — my idea was to help golfers automate the task of carrying their equipment. It was a playful project, 
-        but it captured the spirit that still drives my work today: blending creativity, technical knowledge, and practical implementation 
-        to build intelligent systems that interact meaningfully with the world.
-        <br><br>
-        I’m particularly drawn to working on end-to-end systems — from initial research and prototyping to development, fine-tuning, 
-        and deployment. I enjoy full ownership over what I build, not because I shy away from teamwork (on the contrary — I value 
-        knowledge-sharing and technical discussions), but because I thrive when I have the space and responsibility to dive deep into a 
-        problem and solve it thoroughly. That’s where I deliver my best work.
-        <br><br>
-        Throughout my career, I’ve been trusted to lead and deliver technically challenging solutions, especially in fast-paced startup 
-        environments. One example is the 3D scanner I built for coatingAI, where I initially developed a scanning system using just a single RGB-D 
-        camera and strategically placed QR code markers to enable accurate camera localization and point cloud fusion — all designed and 
-        prototyped remotely during the early months of my first job.
-        <br><br>
-        Colleagues and managers have consistently described me as highly independent, creative, and committed. I take pride in building 
-        systems that work — not just theoretically, but in production, solving real problems for real users.
-        <br><br>
-        I'm currently open to remote opportunities, whether freelance or full-time, and I’m especially drawn to startups or small, agile 
-        teams where I can have meaningful impact and wear multiple hats. I bring a balance of deep technical expertise, a drive to keep 
-        learning, and a strong sense of responsibility for everything I work on.
-        <br><br>
-        If you're looking for someone who combines technical excellence with ownership, creativity, and a real passion for building 
-        intelligent systems — I’d be happy to connect.</p>
+        I’m <strong>Francisco Lourenço</strong>, a <strong>Machine Learning</strong> and <strong>Computer Vision Engineer</strong> with a strong 
+        focus on <strong>3D data</strong>. What drives me is the opportunity to replicate — and in some ways, expand on — one of the most fundamental 
+        aspects of human experience: <em>visual perception</em>. The ability to translate our understanding of the world into intelligent systems is 
+        not only fascinating from a technical standpoint, but also incredibly meaningful in terms of impact.
+      </p>
+      
+      <p>
+        <strong>Machine Learning</strong> and <strong>Computer Vision</strong> sit at the core of the technological transformation we’re witnessing 
+        today. These fields are not only enabling machines to interpret and interact with the world visually — they’re reshaping industries, streamlining 
+        operations, and opening entirely new possibilities for human-computer interaction. When extended into <strong>3D data</strong>, the potential 
+        becomes even more profound. We don’t live in a 2D world, and systems that can reason about <em>depth</em>, <em>shape</em>, and <em>spatial 
+          relationships</em> offer a foundation for breakthroughs in automation, robotics, design, and beyond. For engineers like myself, working in 
+          this space means constantly solving <strong>high-impact problems</strong> at the intersection of <em>perception, intelligence, and innovation</em>.
+      </p>
+      
+      <p>
+        I’ve been experimenting with machines, computers, and robotics from a young age, influenced by my father, who’s also an electrical engineer. 
+        Early on, I took part in two editions of <strong>F1 in Schools</strong> (2012 and 2013), where I developed a passion for hands-on engineering 
+        and teamwork under pressure. That enthusiasm carried into my participation in the <strong>National Robotics Festival</strong> (2014), where I 
+        began exploring autonomous systems and creative problem-solving through robotics.
+      </p>
+      
+      <p>
+        One of my most memorable early experiments was a robot I built as a teenager that used a camera and servo motors to follow a specific object 
+        around — my idea was to help golfers automate the task of carrying their equipment. It was a playful project, but it captured the spirit that 
+        still drives my work today: <strong>blending creativity, technical knowledge, and practical implementation</strong> to build intelligent systems 
+        that interact meaningfully with the world.
+      </p>
+      
+      <p>
+        I’m particularly drawn to working on <strong>end-to-end systems</strong> — from initial research and prototyping to development, fine-tuning, 
+        and deployment. I enjoy full ownership over what I build, not because I shy away from teamwork (on the contrary — I value <em>knowledge-sharing 
+          and technical discussions</em>), but because I thrive when I have the space and responsibility to dive deep into a problem and solve it thoroughly. 
+          That’s where I deliver my best work.
+      </p>
+      
+      <p>
+        Throughout my career, I’ve been trusted to lead and deliver technically challenging solutions, especially in fast-paced startup environments. 
+        One example is the <strong>3D scanner</strong> I built for <strong>coatingAI</strong>, where I developed a scanning system using just a single 
+        RGB-D camera and strategically placed QR code markers to enable accurate camera localization and point cloud fusion — all designed and prototyped 
+        remotely during the early months of my first job.
+      </p>
+      
+      <p>
+        Colleagues and managers have consistently described me as <em>highly independent, creative, and committed</em>. I take pride in building systems 
+        that work — not just theoretically, but in production, solving real problems for real users.
+      </p>
+      
+      <p>
+        I'm currently open to <strong>remote opportunities</strong>, whether freelance or full-time, and I’m especially drawn to startups or small, agile 
+        teams where I can have meaningful impact and wear multiple hats. I bring a balance of <strong>deep technical expertise</strong>, a <em>drive to keep 
+          learning</em>, and a strong sense of <strong>ownership and responsibility</strong> for everything I work on.
+      </p>
+      
+      <p>
+        <em>If you're looking for someone who combines technical excellence with ownership, creativity, and a real passion for building intelligent 
+          systems — I’d be happy to connect.</em>
+      </p>
+      
 
         <div class="about-photo-wrapper">
           <img src="img/yo_y_meli.jpg" alt="Francisco and his girlfriend" class="about-photo" />
@@ -1069,6 +1319,13 @@
           <br><br>
           The final model achieved a <strong>95.6% F1-score</strong> on the <strong>rotated ModelNet40 benchmark</strong> — which, to the best of my knowledge, 
           was a <strong>state-of-the-art result</strong> on this dataset at the time (2023).</p>
+          <div class="project-video-wrapper">
+            <video controls class="project-video" autoplay muted loop playsinline>
+              <source src="videos/classification_video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-caption">📹 Classification system demo on the Animate Anything tool</p>
       </div>
     </div>
   
@@ -1100,6 +1357,13 @@
           <br><br>
           This solution is now a key component of the Anything World pipeline and is used in real-time for 
           character animation and rigging in production.</p>
+          <div class="project-video-wrapper">
+            <video controls class="project-video" autoplay muted loop playsinline>
+              <source src="videos/rotation_video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-caption">📹 Automatic alignment system demo on the Animate Anything tool</p>
       </div>
     </div>
   
@@ -1128,6 +1392,21 @@
           on par with the top-performing models on this dataset.
           <br><br>
           Thanks to its performance and speed, this new solution was successfully deployed into Anything World's production pipeline.</p>
+          <div class="segmentation-grid">
+            <img src="img/segmented_models/net_ensemble_model_1_human.png" alt="Segmentation Result 1">
+            <img src="img/segmented_models/net_ensemble_model_5_human.png" alt="Segmentation Result 2">
+            <img src="img/segmented_models/net_ensemble_model_0_bird.png" alt="Segmentation Result 3">
+            <img src="img/segmented_models/net_ensemble_model_3_bird.png" alt="Segmentation Result 4">
+            <img src="img/segmented_models/net_ensemble_model_0_small_walk.png" alt="Segmentation Result 5">
+            <img src="img/segmented_models/net_ensemble_model_1_small_walk.png" alt="Segmentation Result 6">
+            <img src="img/segmented_models/net_ensemble_model_5_car.png" alt="Segmentation Result 7">
+            <img src="img/segmented_models/net_ensemble_model_8_car.png" alt="Segmentation Result 8">
+            <img src="img/segmented_models/net_ensemble_model_0_insect.png" alt="Segmentation Result 9">
+            <img src="img/segmented_models/net_ensemble_model_4_insect.png" alt="Segmentation Result 10">
+            <img src="img/segmented_models/net_ensemble_model_1_fat_crawl.png" alt="Segmentation Result 11">
+            <img src="img/segmented_models/net_ensemble_model_7_fat_crawl.png" alt="Segmentation Result 12">
+          </div>
+          <p class="video-caption">🧠 Part segmentation results across different categories</p>
       </div>
     </div>
   
@@ -1153,6 +1432,15 @@
           The final solution delivered <strong>precise and consistent 3D reconstructions</strong> of metallic parts in real-time, and was successfully deployed 
           into coatingAI’s production environment — enabling downstream automation for coating quality optimization.
         </p>
+        <div class="project-video-wrapper">
+          <video controls class="project-video" autoplay muted loop playsinline>
+            <source src="videos/scanner_video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p class="video-caption">📹 My first months working with coatingAI: 
+          Here you can see the first 3D scanner prototype and the sketchy metal structure I built to
+          replicate the coating line.</p>
       </div>
     </div>
   
@@ -1160,16 +1448,18 @@
       <div class="modal-content" style="background-image: url('img/glass_bottle.png');">
         <span class="close" onclick="closeModal('modal5')">&times;</span>
         <h2>Anomaly Detection System for a Glass Bottle Production Line</h2>
-        <p>This was a research-focused project I contributed to at the <strong>Institute of Systems and Robotics (ISR)</strong>, 
-        <strong>University of Coimbra</strong>, aimed at developing a <strong>computer vision–based anomaly detection system</strong> for a glass bottle production line.
+        <p>
+          This was a research-focused project I contributed to at the <strong>Institute of Systems and Robotics (ISR)</strong>, 
+        <strong>University of Coimbra</strong>, aimed at developing a <strong>computer vision-based anomaly detection system</strong> for a glass bottle production line.
           <br><br>
           My role centered on two key areas:
-          
+        </p>
           <ul>
-            <li>Designing and implementing the <strong>anomaly detection software</strong> responsible for identifying visual defects or irregularities in real time
+            <li>Designing and implementing the <strong>anomaly detection software</strong> responsible for identifying visual defects or irregularities in real time.</li>
             <li>Contributing to the optimization of the <strong>camera setup</strong>, including the number, placement, and calibration of cameras to maximize inspection 
-              coverage and accuracy
+              coverage and accuracy.</li>
           </ul>
+        <p>
           This project combined elements of <strong>classical and learning-based vision approaches</strong>, and was designed to operate under the 
           high-throughput and precision requirements of industrial production lines.
         </p>
@@ -1412,6 +1702,28 @@
     </div>
   </section>
 
+  <section id="services" style="padding: 4rem 2rem; max-width: 1000px; margin: auto;">
+    <h2>Services</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+      <div class="contact-card">
+        <h3>🔍 3D Computer Vision</h3>
+        <p>End-to-end 3D pipelines including segmentation, classification, pose estimation, and reconstruction.</p>
+      </div>
+      <div class="contact-card">
+        <h3>🧠 Machine Learning</h3>
+        <p>Custom model training, evaluation, and deployment for real-world use cases in Python (PyTorch, TensorFlow).</p>
+      </div>
+      <div class="contact-card">
+        <h3>💻 ML Prototyping</h3>
+        <p>Research-backed MVPs for startups and R&D teams. Fast, functional, and tailored.</p>
+      </div>
+      <div class="contact-card">
+        <h3>📦 3D Software Tools</h3>
+        <p>Development of 3D processing tools, mesh manipulation pipelines, or data preparation scripts.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills-grid">
@@ -1588,10 +1900,36 @@
     </div>
   </section>
 
-  <section id="contact">
+  <!-- <section id="contact">
     <h2>Contact</h2>
+    <p>Whatsapp: <a href="call:+351 964826072">+351 964826072</a></p>
     <p>Email: <a href="mailto:francisco.rlourenco@gmail.com">francisco.rlourenco@gmail.com</a></p>
     <p>LinkedIn: <a href="https://linkedin.com/in/franciscorlourenco" target="_blank">linkedin.com/in/franciscorlourenco</a></p>
+  </section> -->
+
+  <section id="contact">
+    <h2>Get in touch</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <img src="img/gmail-icon.jpg" alt="Email">
+        <!-- <p>francisco.rlourenco@gmail.com</p> -->
+        <p><a href="mailto:francisco.rlourenco@gmail.com">francisco.rlourenco@gmail.com</a></p>
+      </div>
+      <div class="contact-card">
+        <img src="img/whatsapp-icon.png" alt="Whatsapp">
+        <!-- <p>+351 964826072</p> -->
+        <p><a href="call:+351 964826072">+351 964826072</a></p>
+      </div>
+      <div class="contact-card">
+        <img src="img/linkedin-icon.png" alt="LinkedIn">
+        <!-- <p>/francisco-lourenco</p> -->
+        <p><a href="https://linkedin.com/in/franciscorlourenco" target="_blank">/franciscorlourenco</a></p>
+      </div>
+      <!-- <div class="contact-card">
+        <img src="img/github-icon.png" alt="GitHub">
+        <p>@franciscodev</p>
+      </div> -->
+    </div>
   </section>
 
   <footer>
