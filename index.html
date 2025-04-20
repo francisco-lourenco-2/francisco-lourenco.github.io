@@ -351,6 +351,49 @@
       text-align: left;
     }  */
 
+    .hamburger {
+        display: none;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #ffecd2, #d8f8e1);
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        font-size: 2rem;
+        font-weight: bold;
+        color: #1e2a33;
+        cursor: pointer;
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      background: linear-gradient(135deg, #fff3cd, #d8f8e1);
+      padding: 1rem;
+      border-radius: 16px;
+      margin-top: 1rem;
+      position: fixed;
+      top: 80px; /* below the hamburger */
+      right: 1rem;
+      z-index: 999;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     @media screen and (max-width: 768px) {
       .overlay {
         flex-direction: column;
@@ -403,9 +446,7 @@
       }
 
       .hamburger {
-        display: block;
-        margin: 0 auto;
-        text-align: center;
+        display: flex;
       }
     }
       /* background: rgba(255, 255, 255, 0.3);
@@ -1299,10 +1340,7 @@
       <li><a href="#contact"><button class="nav-key">Contact</button></a></li>
     </ul>
 
-    <!-- Hamburger icon (mobile only) -->
-    <div class="hamburger" onclick="toggleMobileMenu()">
-      ☰
-    </div>
+
 
     <!-- Mobile dropdown menu -->
     <ul class="nav-links mobile-nav" id="mobileNav">
@@ -1317,6 +1355,11 @@
     </ul>
 
   </nav>
+
+  <!-- Hamburger icon (mobile only) -->
+  <div class="hamburger" onclick="toggleMobileMenu()">
+    ☰
+  </div>
 
   <section id="about">
     <h2>About Me</h2>
