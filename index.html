@@ -394,108 +394,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media screen and (max-width: 768px) {
-      .overlay {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1rem;
-      }
-      .profile-pic {
-        width: 300px;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 3px solid white;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        background: rgba(212, 255, 229, 0.3);
-      }
-
-      .header-left {
-        order: -1;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-      }
-
-      /* .header-left img {
-        width: 180px;
-        max-width: 100%;
-        height: auto;
-        border-radius: 24px;
-        margin-bottom: 1rem;
-      } */
-
-      .header-right {
-        width: 100%;
-        padding: 0 1rem;
-      }
-
-      .header-right h1 {
-        font-size: clamp(1.8rem, 6vw, 2.4rem);
-        line-height: 1.2;
-      }
-
-      .header-right p {
-        font-size: clamp(1rem, 4.5vw, 1.4rem);
-        line-height: 1.5;
-      }
-
-      .nav-links {
-        display: none; /* hide desktop nav */
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .timeline-artistic {
-        padding-left: 0;
-        border-left: none;
-      }
-
-      .timeline-artistic::before {
-        display: none;
-      }
-
-      .timeline-entry {
-        margin-bottom: 2rem;
-        padding: 1rem;
-        border-radius: 16px;
-        background: linear-gradient(135deg, #fef4c3, #d8f8e1);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      }
-
-      .timeline-marker {
-        display: none;
-      }
-
-      .timeline-info {
-        padding-left: 0;
-      }
-
-      .card-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
-
-      .logo-circle {
-        align-self: center;
-        margin-bottom: 0.5rem;
-      }
-
-      .timeline-card {
-        padding: 1rem;
-      }
-
-      .timeline-card h3,
-      .timeline-card h4,
-      .timeline-card p {
-        text-align: left;
-      }
-      
-    }
       /* background: rgba(255, 255, 255, 0.3);
       backdrop-filter: blur(10px);
       border-radius: 16px;
@@ -1220,6 +1118,108 @@
       padding: 1rem;
       border-radius: 16px;
       margin-top: 1rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .overlay {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+      }
+      .profile-pic {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        background: rgba(212, 255, 229, 0.3);
+      }
+
+      .header-left {
+        order: -1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* .header-left img {
+        width: 180px;
+        max-width: 100%;
+        height: auto;
+        border-radius: 24px;
+        margin-bottom: 1rem;
+      } */
+
+      .header-right {
+        width: 100%;
+        padding: 0 1rem;
+      }
+
+      .header-right h1 {
+        font-size: clamp(1.8rem, 6vw, 2.4rem);
+        line-height: 1.2;
+      }
+
+      .header-right p {
+        font-size: clamp(1rem, 4.5vw, 1.4rem);
+        line-height: 1.5;
+      }
+
+      .nav-links {
+        display: none; /* hide desktop nav */
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .timeline-artistic {
+        padding-left: 0;
+        border-left: none;
+      }
+
+      .timeline-artistic::before {
+        display: none;
+      }
+
+      /* .timeline-entry {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #fef4c3, #d8f8e1);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      } */
+
+      .timeline-marker {
+        display: none;
+      }
+
+      .timeline-info {
+        padding-left: 0;
+      }
+
+      .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .logo-circle {
+        align-self: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-card {
+        padding: 1rem;
+      }
+
+      .timeline-card h3,
+      .timeline-card h4,
+      .timeline-card p {
+        text-align: left;
+      }         
     }
 
   </style>
