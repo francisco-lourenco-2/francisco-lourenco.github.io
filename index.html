@@ -757,6 +757,14 @@
       background: linear-gradient(135deg, #ffe0cc, #e3d9ff);
     }
 
+    .gradient-7 {
+      background: linear-gradient(135deg, #f0e6ff, #e6f3ff);
+    }
+
+    .gradient-8 {
+      background: linear-gradient(135deg, #ffe9c8, #c5eaff);
+    }
+
     /* Adjust text */
     .timeline-card p {
       font-size: 1rem;
@@ -940,6 +948,25 @@
 
     .segmentation-grid img:hover {
       transform: scale(1.03);
+    }
+
+    .segmentation-grid-roofs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .segmentation-grid-roofs img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .segmentation-grid-roofs img:hover {
+      transform: scale(2.0);
     }
 
     @keyframes pulse {
@@ -1509,64 +1536,77 @@
     <h2>Highlighted Projects</h2>
     <div class="section-wrapper">
       <div class="projects-grid">
-
         <!-- Project Cards -->
-        <div class="project-card" style="background-image: url('img/projects/classification.png');" onclick="openModal('modal1')">
+        <div class="project-card" style="background-image: url('img/projects/roof.png');" onclick="openModal('modal1')">
+          <div class="card-content">
+            <h3>Aerial Roof Facet & Obstruction Instance Segmentation for 3D House Reconstruction</h3>
+            <p>Ellipse - 2025</p>
+          </div>
+        </div>
+
+        <div class="project-card" style="background-image: url('img/projects/all-in-one.png');" onclick="openModal('modal2')">
+          <div class="card-content">
+            <h3>Roof Facet & Roof Obstruction Segmentation for Solar Panel installations</h3>
+            <p>EyeVi Technologies - 2025</p>
+          </div>
+        </div>
+
+        <div class="project-card" style="background-image: url('img/projects/classification.png');" onclick="openModal('modal3')">
           <div class="card-content">
             <h3>3D Shape Classification System</h3>
-            <p>Anything World</p>
+            <p>Anything World - 2023</p>
           </div>
         </div>
     
-        <div class="project-card" style="background-image: url('img/projects/alignment.png');" onclick="openModal('modal2')">
+        <div class="project-card" style="background-image: url('img/projects/alignment.png');" onclick="openModal('modal4')">
           <div class="card-content">
             <h3>3D Shape Automatic Alignment</h3>
-            <p>Anything World</p>
+            <p>Anything World - 2024</p>
           </div>
         </div>
     
-        <div class="project-card" style="background-image: url('img/projects/segmentation.png');" onclick="openModal('modal3')">
+        <div class="project-card" style="background-image: url('img/projects/segmentation.png');" onclick="openModal('modal5')">
           <div class="card-content">
             <h3>3D Shape Part Segmentation System</h3>
-            <p>Anything World</p>
+            <p>Anything World - 2025</p>
           </div>
         </div>
     
-        <div class="project-card" style="background-image: url('img/projects/scanner.png');" onclick="openModal('modal4')">
+        <div class="project-card" style="background-image: url('img/projects/scanner.png');" onclick="openModal('modal6')">
           <div class="card-content">
             <h3>Custom Multi RGB-D Camera System Based 3D scanner</h3>
-            <p>coatingAI</p>
+            <p>coatingAI - 2022</p>
           </div>
         </div>
 
-        <div class="project-card" style="background-image: url('img/projects/glass_bottle.png');" onclick="openModal('modal5')">
+        <div class="project-card" style="background-image: url('img/projects/glass_bottle.png');" onclick="openModal('modal7')">
           <div class="card-content">
             <h3>Anomaly Detection System for a Glass Bottle Production Line</h3>
-            <p>Vidrotec</p>
+            <p>Vidrotec - 2021</p>
           </div>
         </div>
 
-        <div class="project-card" style="background-image: url('img/projects/thesis.png');" onclick="openModal('modal6')">
+        <div class="project-card" style="background-image: url('img/projects/thesis.png');" onclick="openModal('modal8')">
           <div class="card-content">
             <h3>6DoF Object Pose Estimation from RGB-D Images
               Using Machine Learning Approaches</h3>
-            <p>Master Thesis</p>
+            <p>Master Thesis - 2021</p>
           </div>
         </div>
     
-        <div class="project-card" style="background-image: url('img/projects/depth.png');" onclick="openModal('modal7')">
+        <div class="project-card" style="background-image: url('img/projects/depth.png');" onclick="openModal('modal9')">
           <div class="card-content">
             <h3>Intel RealSense SR305, D415 and L515:
               Experimental Evaluation and Comparison of
               Depth Estimation</h3>
-            <p>VISIGRAPP 2021 International Conference</p>
+            <p>VISIGRAPP 2021 International Conference - 2021</p>
           </div>
         </div>
     
-        <div class="project-card" style="background-image: url('img/projects/pose.png');" onclick="openModal('modal8')">
+        <div class="project-card" style="background-image: url('img/projects/pose.png');" onclick="openModal('modal10')">
           <div class="card-content">
             <h3>Evaluation of the Accuracy of Pose Estimation Based on Relative Pose</h3>
-            <p>RECPAD 2021 Portuguese Conference</p>
+            <p>RECPAD 2021 Portuguese Conference - 2021</p>
           </div>
         </div>
 
@@ -1585,12 +1625,103 @@
         <div class="project-card" style="background-image: url('img/robot.jpg');" onclick="openModal('modal12')">
           <h3>Vision-Guided Robot</h3>
         </div> -->
-      </div>
-    
       <!-- Modal Templates -->
       <div id="modal1" class="modal">
-        <div class="modal-content" style="background-image: url('img/projects/classification.png');">
+        <div class="modal-content" style="background-image: url('img/projects/roof.png');">
           <span class="close" onclick="closeModal('modal1')">&times;</span>
+          <h2>Aerial Roof Facet & Obstruction Instance Segmentation for 3D House Reconstruction</h2>
+          <p>At <strong>Ellipse</strong> I worked on the <strong>computer vision backbone</strong> that turns aerial imagery 
+            into structured geometry for rooftop solar design. My focus was to reliably understand how a roof is shaped and 
+            what objects sit on top of it, so downstream tools can estimate usable solar area and generate accurate 3D models.
+            <br><br>
+            I developed two core segmentation systems:
+            <br><br>
+            • <strong>Roof facet segmentation</strong> – models that detect and separate individual roof planes (facets) from 
+            high-resolution imagery and elevation data, providing clean polygons that can be directly consumed for 3D 
+            reconstruction and solar layout.
+            <br><br>
+            • <strong>Object & obstruction segmentation</strong> – dedicated models for rooftops elements (chimneys, skylights, 
+            vents, HVAC units, nearby trees, etc.) to automatically flag areas that reduce usable panel surface or cast shadows.
+            <br><br>
+            To support these models long term, I also designed and built a <strong>new in-house dataset for Ellipse</strong>:
+            <br><br>
+            I created the <strong>annotation guidelines, class taxonomy and quality checks</strong>, then coordinated and 
+            reviewed labeling so that every polygon, facet and obstruction was consistent with how the models and solar design 
+            tools would consume them. The result is a <strong>production-ready dataset and segmentation stack</strong> that 
+            Ellipse can continue to expand as they scale to new cities and imagery sources.
+            <div class="segmentation-grid-roofs">
+              <img src="img/segmented_roofs/sample_000.png" alt="Segmentation Result 1">
+              <img src="img/segmented_roofs/sample_003.png" alt="Segmentation Result 2">
+              <img src="img/segmented_roofs/sample_004.png" alt="Segmentation Result 3">
+              <img src="img/segmented_roofs/sample_005.png" alt="Segmentation Result 4">
+              <img src="img/segmented_roofs/sample_007.png" alt="Segmentation Result 5">
+              <img src="img/segmented_roofs/sample_008.png" alt="Segmentation Result 6">
+              <img src="img/segmented_roofs/sample_009.png" alt="Segmentation Result 7">
+              <img src="img/segmented_roofs/sample_010.png" alt="Segmentation Result 8">
+            </div>
+            <p class="video-caption">🧠 Roof facet and obstruction segmentation results. Each image has original on the left, 
+              ground truth in the center and inference on the right.</p>
+          </p>
+        </div>
+      </div>
+
+      <div id="modal2" class="modal">
+        <div class="modal-content" style="background-image: url('img/projects/all-in-one.png');">
+          <span class="close" onclick="closeModal('modal2')">&times;</span>
+          <h2>City-Scale Point Cloud Colorization & Georeferencing Pipeline</h2>
+          <p><strong>EyeVi Technologies</strong> is a geospatial, AI-powered startup that offers an <strong>on-demand mobile 
+            mapping solution</strong> for road network intelligence, combining <strong>360° imagery, LiDAR and GNSS/INS</strong> 
+            to help cities and infrastructure owners maintain roads more efficiently and build high-detail digital twins.
+            <br><br>
+            I joined the team as a <strong>3D ML/CV engineer</strong> and took ownership of the <strong>all-in-one processing 
+              pipeline</strong> that turns raw sensor logs from EyeVi's survey vehicles into a single, coherent, city-scale 
+              representation of the street network. Each drive produces massive heterogeneous data: <strong>360° RGB panoramas, 
+                dense LiDAR scans, and a navigation trajectory refined with LiDAR-based ICP</strong>.
+            <br><br>
+            My job was to design and implement a robust, production-ready pipeline that could:
+            <br><br>
+            • <strong>Ingest and validate</strong> raw survey logs<br>
+            • <strong>Reconstruct continuous 3D street scans</strong> from LiDAR and trajectory<br>
+            • <strong>Colorize every LiDAR point</strong> using the 360° imagery<br>
+            • <strong>Georeference everything</strong> into a consistent global coordinate system<br>
+            • <strong>Generate orthostrips:</strong> high-resolution top-down road mosaics created by stitching ortho photos
+            <br><br>
+            The pipeline starts with a <strong>strict synchronization and reconstruction stage</strong>. LiDAR packets and 360° 
+            camera frames are aligned with the refined GNSS/INS+ICP trajectory to rebuild a continuous, temporally ordered scan 
+            of the drive. This gives us a clean 3D backbone of the street geometry, even in challenging GPS conditions.
+            <br><br>
+            On top of this reconstruction, I implemented the <strong>colorization module</strong>. Each LiDAR point is 
+            transformed into the appropriate camera frame and projected onto the panoramic image, where the pipeline samples 
+            the corresponding RGB values. It handles <strong>multiple overlapping views, changing exposure, occlusions, and out-of-FOV points</strong> to produce dense, photorealistically colorized point clouds that keep both geometric accuracy and visual context.
+            <br><br>
+            Next, the <strong>georeferencing layer</strong> propagates the refined vehicle pose to every single point, 
+            anchoring the full dataset in a global coordinate frame. This is critical for EyeVi's use cases: <strong>road-asset 
+              inventories, condition monitoring, and digital twins</strong> that need centimeter-level consistency between passes, surveys, and external GIS data.
+            <br><br>
+            Finally, I extended the same pipeline to generate <strong>road orthostrips as a standard product</strong>. 
+            Using the colorized, georeferenced data, the system computes a ground-aligned sampling grid under the vehicle 
+            and produces high-resolution ortho photos of the road surface as it moves. These tiles are then stitched along the 
+            trajectory into long, continuous orthostrips.
+            <br><br>
+            Today, this <strong>all-in-one processing pipeline</strong>, from raw logs to colorized, georeferenced 3D scans 
+            and stitched orthostrips, sits at the heart of EyeVi's mapping stack and powers many of the AI and analytics tools 
+            delivered to clients.
+            <div class="project-video-wrapper">
+              <video controls class="project-video" autoplay muted loop playsinline>
+                <source src="videos/all_in_one_video.mp4" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p class="video-caption">📹 3D Reconstruction of a street using the all-in-one pipeline</p>
+            
+          </p>
+        </div>
+      </div>
+          
+      <!-- Modal Templates -->
+      <div id="modal3" class="modal">
+        <div class="modal-content" style="background-image: url('img/projects/classification.png');">
+          <span class="close" onclick="closeModal('modal3')">&times;</span>
           <h2>3D Shape Classification System</h2>
           <p>This was a fully end-to-end solution I designed and delivered for Anything World. 
             The objective was to develop a robust classification system to support both the Anything 
@@ -1627,9 +1758,9 @@
         </div>
       </div>
     
-      <div id="modal2" class="modal">
+      <div id="modal4" class="modal">
         <div class="modal-content" style="background-image: url('img/projects/alignment.png');">
-          <span class="close" onclick="closeModal('modal2')">&times;</span>
+          <span class="close" onclick="closeModal('modal4')">&times;</span>
           <h2>3D Shape Automatic Alignment</h2>
           <p>This was a fully end-to-end project I led at Anything World, aimed at developing an automatic 
             3D alignment system to support both the Anything World API and the 
@@ -1665,9 +1796,9 @@
         </div>
       </div>
     
-      <div id="modal3" class="modal">
+      <div id="modal5" class="modal">
         <div class="modal-content" style="background-image: url('img/projects/segmentation.png');">
-          <span class="close" onclick="closeModal('modal3')">&times;</span>
+          <span class="close" onclick="closeModal('modal5')">&times;</span>
           <h2>3D Shape Part Segmentation System</h2>
           <p>This was another end-to-end project I developed at Anything World, focused on <strong>3D shape part segmentation</strong> — a key step 
             in the automatic rigging and animation of 3D characters. The objective was to identify the precise location of specific 
@@ -1708,9 +1839,9 @@
         </div>
       </div>
     
-      <div id="modal4" class="modal">
+      <div id="modal6" class="modal">
         <div class="modal-content" style="background-image: url('img/projects/scanner.png');">
-          <span class="close" onclick="closeModal('modal4')">&times;</span>
+          <span class="close" onclick="closeModal('modal6')">&times;</span>
           <h2>Custom Multi RGB-D Camera System Based 3D scanner</h2>
           <p>coatingAI is a startup pioneering the use of AI in the <strong>powder coating industry</strong>, with the goal of improving 
             efficiency and reducing material waste while maximizing quality and precision.
@@ -1742,9 +1873,9 @@
         </div>
       </div>
     
-      <div id="modal5" class="modal">
+      <div id="modal7" class="modal">
         <div class="modal-content" style="background-image: url('img/projects/glass_bottle.png');">
-          <span class="close" onclick="closeModal('modal5')">&times;</span>
+          <span class="close" onclick="closeModal('modal7')">&times;</span>
           <h2>Anomaly Detection System for a Glass Bottle Production Line</h2>
           <p>
             This was a research-focused project I contributed to at the <strong>Institute of Systems and Robotics (ISR)</strong>, 
@@ -1764,9 +1895,9 @@
         </div>
       </div>
 
-      <div id="modal6" class="modal">
+      <div id="modal8" class="modal">
         <div class="modal-content" style="background-image: url('img/projects/thesis.png');">
-          <span class="close" onclick="closeModal('modal6')">&times;</span>
+          <span class="close" onclick="closeModal('modal8')">&times;</span>
           <h2>6DoF Object Pose Estimation from RGB-D Images
             Using Machine Learning Approaches</h2>
           <iframe 
@@ -1778,9 +1909,9 @@
         </div>
       </div>
 
-      <div id="modal7" class="modal">
+      <div id="modal9" class="modal">
         <div class="modal-content" style="background-image: url('img/projects/depth.png');">
-          <span class="close" onclick="closeModal('modal7')">&times;</span>
+          <span class="close" onclick="closeModal('modal9')">&times;</span>
           <h2>Intel RealSense SR305, D415 and L515:
             Experimental Evaluation and Comparison of
             Depth Estimation</h2>
@@ -1793,9 +1924,9 @@
         </div>
       </div>
 
-      <div id="modal8" class="modal">
+      <div id="modal10" class="modal">
         <div class="modal-content" style="background-image: url('img/projects/pose.png');">
-          <span class="close" onclick="closeModal('modal8')">&times;</span>
+          <span class="close" onclick="closeModal('modal10')">&times;</span>
           <h2>Evaluation of the Accuracy of Pose Estimation Based on Relative Pose</h2>
           <iframe 
             src="documents/RECPAD_2021_paper_46.pdf" 
@@ -2038,7 +2169,41 @@
           <div class="timeline-entry">
             <div class="timeline-marker"></div>
             <div class="timeline-info">
-              <div class="timeline-date">Jan 2023 – Present</div>
+              <div class="timeline-date">2025 – Present</div>
+              <div class="timeline-card gradient-8">
+                <div class="card-header">
+                  <div class="card-text">
+                    <h3>Freelance 3D Data Specialist | ML & CV Engineer</h3>
+                    <h4>Freelance</h4>
+                    <h5>Remote 📍</h5>
+                  </div>
+                  <div class="logo-circle">
+                    <img src="img/logos/freelance.png" alt="Anything World Logo">
+                  </div>
+                </div>
+                <ul>
+                  <li>As a freelance 3D ML/CV engineer, I worked on end-to-end computer vision 
+                  solutions for geospatial and solar energy applications. I collaborated with 
+                  <strong>Ellipse</strong> to develop the computer vision backbone for rooftop solar design, 
+                  building segmentation systems for aerial roof facet and obstruction detection from 
+                  high-resolution imagery.
+                  <li>I also worked with <strong>EyeVi Technologies</strong> to design and implement their 
+                  all-in-one processing pipeline that transforms raw sensor logs from survey vehicles 
+                  into colorized, georeferenced city-scale point clouds and orthostrips, along with 
+                  developing roof facet and obstruction segmentation models for solar panel installation 
+                  planning.
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-artistic">
+          
+          <div class="timeline-entry">
+            <div class="timeline-marker"></div>
+            <div class="timeline-info">
+              <div class="timeline-date">Jan 2023 – 2025</div>
               <div class="timeline-card gradient-1">
                 <div class="card-header">
                   <div class="card-text">
@@ -2129,7 +2294,7 @@
           <div class="timeline-marker"></div>
           <div class="timeline-info">
             <div class="timeline-date"> 2018 – 2021</div>
-            <div class="timeline-card gradient-4">
+            <div class="timeline-card gradient-5">
               <div class="card-header">
                 <div class="card-text">
                   <h3>Masters in Electrical and Computer Engineering</h3>
@@ -2158,7 +2323,7 @@
           <div class="timeline-marker"></div>
           <div class="timeline-info">
             <div class="timeline-date">Sep 2021 – Jan 2023</div>
-            <div class="timeline-card gradient-5">
+            <div class="timeline-card gradient-6">
               <div class="card-header">
                 <div class="card-text">
                   <h3>Masters in Electrical and Computer Engineering</h3>
@@ -2185,10 +2350,10 @@
           <div class="timeline-marker"></div>
           <div class="timeline-info">
             <div class="timeline-date">2018 – Jun 2019</div>
-            <div class="timeline-card gradient-6">
+            <div class="timeline-card gradient-7">
               <div class="card-header">
                 <div class="card-text">
-                  <h3>Bachelor’s degree in Electrical and Computer Engineering</h3>
+                  <h3>Bachelor's degree in Electrical and Computer Engineering</h3>
                   <h4>University of Coimbra</h4>
                   <h5>Coimbra, Portugal 📍</h5>
                 </div>
